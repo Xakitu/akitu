@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اكيتو | akitu - Redirecting...</title>
+    <meta http-equiv="refresh" content="0; url=/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fcf9f5;
+            color: #a87b3f;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .loader {
+            border: 1px solid rgba(168, 123, 63, 0.2);
+            border-top: 1px solid #a87b3f;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        p {
+            font-size: 12px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+    <p>Redirecting to Home</p>
+    <script>
+        const path = window.location.pathname;
+        if (path !== '/') {
+            const cleanPath = path.replace('/', '');
+            // Redirecting back to the main page with a hash, so the main page can handle it if needed.
+            // If the user entered /about, it will redirect to /#about
+            window.location.replace('/#' + cleanPath);
+        } else {
+            window.location.replace('/');
+        }
+    </script>
+</body>
+</html>
