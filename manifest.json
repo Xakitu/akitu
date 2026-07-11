@@ -1,0 +1,21 @@
+{
+  "name": "AKITU Luxury Events",
+  "short_name": "AKITU",
+  "description": "شركة عراقية رائدة في تنظيم وإدارة الأعراس والمناسبات الفاخرة",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fedbe2",
+  "theme_color": "#fedbe2",
+  "icons": [
+    {
+      "src": "https://res.cloudinary.com/kmoscyfg/image/upload/v1783721094/mainicon_nnzbr9.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "https://res.cloudinary.com/kmoscyfg/image/upload/v1783721094/mainicon_nnzbr9.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

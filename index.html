@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اكيتو | akitu</title>
+    <link rel="icon" type="image/jpeg" href="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721094/mainicon_nnzbr9.jpg">
+    <meta name="description" content="AKITU - شركة عراقية رائدة في تنظيم وإدارة الأعراس والمناسبات الفاخرة وفق منهجيات إدارة المشاريع العالمية. نصنع لكم بدايات جديدة.">
+    <meta property="og:title" content="اكيتو | akitu">
+    <meta property="og:description" content="AKITU - شركة عراقية رائدة في تنظيم وإدارة الأعراس والمناسبات الفاخرة.">
+    <meta property="og:image" content="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721094/mainicon_nnzbr9.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://unpkg.com/lucide@0.292.0"></script>
+    <script src="https://unpkg.com/split-type@0.3.3"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#fedbe2">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        peach: '#fedbe2',
+                        sage: '#8ebaa0',
+                        gold: '#a87b3f',
+                        lavender: '#d0cfee',
+                        taupe: '#493a3e',
+                        whitePink: '#fff0f4',
+                        burntOrange: '#e0624c',
+                    },
+                    fontFamily: {
+                        arabic: ['Cairo', 'sans-serif'],
+                        english: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+    <!-- SVG Filters -->
+    <svg style="position: absolute; width: 0; height: 0; pointer-events: none;" xmlns="http://www.w3.org/2000/svg">
+        <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 25 -9" result="goo" />
+            <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+        </filter>
+    </svg>
+    <div id="language-preloader" class="fixed inset-0 z-[10005] flex flex-col items-center justify-center transition-opacity duration-1000 opacity-100 pointer-events-auto" style="background-color: #493a3e;">
+        <img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721095/logo_x09xbc.webp" alt="Akitu Logo" class="h-28 sm:h-36 mb-8 drop-shadow-lg object-contain">
+        <div class="w-48 sm:w-64 h-[2px] rounded-full overflow-hidden" style="background-color: rgba(168,123,63,0.2);">
+            <div class="h-full w-0" id="language-progress" style="background-color: #a87b3f;"></div>
+        </div>
+    </div>    
+    <div class="bg-grain"></div>
+    <!-- Chamomile Background Micro-Pattern -->
+    <div class="fixed inset-0 pointer-events-none z-0 opacity-[0.02] overflow-hidden mix-blend-multiply">
+        <!-- Top Left -->
+        <svg class="absolute -top-10 -left-10 w-64 h-64 sm:w-96 sm:h-96 transform -rotate-12" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 35C50 35 60 15 50 10C40 15 50 35 50 35ZM50 65C50 65 40 85 50 90C60 85 50 65 50 65ZM65 50C65 50 85 60 90 50C85 40 65 50 65 50ZM35 50C35 50 15 40 10 50C15 60 35 50 35 50ZM60.6 60.6C60.6 60.6 74.7 74.7 78.3 68.3C74.7 61.2 60.6 60.6 60.6 60.6ZM39.4 39.4C39.4 39.4 25.3 25.3 21.7 31.7C25.3 38.8 39.4 39.4 39.4 39.4ZM60.6 39.4C60.6 39.4 74.7 25.3 78.3 31.7C74.7 38.8 60.6 39.4 60.6 39.4ZM39.4 60.6C39.4 60.6 25.3 74.7 21.7 68.3C25.3 61.2 39.4 60.6 39.4 60.6Z" fill="#a87b3f"/>
+            <circle cx="50" cy="50" r="10" fill="#e0624c" opacity="0.8"/>
+        </svg>
+        <!-- Bottom Right -->
+        <svg class="absolute -bottom-10 -right-10 w-64 h-64 sm:w-96 sm:h-96 transform rotate-45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 35C50 35 60 15 50 10C40 15 50 35 50 35ZM50 65C50 65 40 85 50 90C60 85 50 65 50 65ZM65 50C65 50 85 60 90 50C85 40 65 50 65 50ZM35 50C35 50 15 40 10 50C15 60 35 50 35 50ZM60.6 60.6C60.6 60.6 74.7 74.7 78.3 68.3C74.7 61.2 60.6 60.6 60.6 60.6ZM39.4 39.4C39.4 39.4 25.3 25.3 21.7 31.7C25.3 38.8 39.4 39.4 39.4 39.4ZM60.6 39.4C60.6 39.4 74.7 25.3 78.3 31.7C74.7 38.8 60.6 39.4 60.6 39.4ZM39.4 60.6C39.4 60.6 25.3 74.7 21.7 68.3C25.3 61.2 39.4 60.6 39.4 60.6Z" fill="#a87b3f"/>
+            <circle cx="50" cy="50" r="10" fill="#e0624c" opacity="0.8"/>
+        </svg>
+    </div>
+
+    <!-- Cinematic Fade-to-Black Transition -->
+    <div id="cinematic-transition" class="fixed inset-0 bg-[#0d0a0b] z-[11000] pointer-events-none opacity-0"></div>
+
+    <canvas id="ambient-canvas" class="fixed inset-0 pointer-events-none z-10 w-full h-full"></canvas>
+    
+    <!-- MAIN WRAPPER FOR FOOTER REVEAL -->
+    <main id="main-scroll-wrap" class="relative z-10 bg-[#fdfbf7] shadow-2xl">
+    <div class="candle-scroll-wrapper" id="candle-scroller">
+        <span class="candle-scroll-label text-[7px] tracking-[0.2em] text-taupe/40 uppercase mb-2 font-english select-none" style="writing-mode: vertical-lr;">SCROLL</span>
+        <div class="candle-container" id="candle-interactive-zone" onclick="smoothScrollTo('#footer-section')">
+            <svg class="smoke-puff smoke-puff-1" viewBox="0 0 12 24">
+                <path d="M6,20 Q3,14 8,10 T6,2" stroke-width="0.8"/>
+            </svg>
+            <svg class="smoke-puff smoke-puff-2" viewBox="0 0 10 20">
+                <path d="M5,18 Q2,12 7,8 T4,1" stroke-width="0.6"/>
+            </svg>
+            <svg class="smoke-puff smoke-puff-3" viewBox="0 0 11 22">
+                <path d="M6,19 Q4,13 9,9 T5,1" stroke-width="0.7"/>
+            </svg>
+            <div class="candle-flame" id="scroller-flame"></div>
+            <div class="candle-wick"></div>
+            <div class="candle-body" id="scroller-wax" style="height: 180px;"></div>
+
+        </div>
+    </div>
+
+
+    <header class="fixed top-4 sm:top-6 inset-x-0 z-[9000] flex justify-center pointer-events-none">
+        <div id="nav-interactive-container" class="frosted-glass border border-gold/15 pointer-events-auto relative shadow-md shadow-gold/5 touch-active">
+            <div class="nav-link-group left-group">
+                <a href="#" class="nav-link-item magnetic-btn" data-lang="en" onclick="smoothScrollTo(0); closeDynamicIsland(); return false;">HOME</a>
+                <a href="#" class="nav-link-item magnetic-btn font-arabic" data-lang="ar" onclick="smoothScrollTo(0); closeDynamicIsland(); return false;">الرئيسية</a>
+                <a href="#services" class="nav-link-item magnetic-btn" data-lang="en" onclick="smoothScrollTo('#services'); closeDynamicIsland(); return false;">COMPANY</a>
+                <a href="#services" class="nav-link-item magnetic-btn font-arabic" data-lang="ar" onclick="smoothScrollTo('#services'); closeDynamicIsland(); return false;">الشركة</a>
+            </div>
+            <button id="nav-central-trigger" class="flex flex-col items-center justify-center relative z-10 w-24 md:w-32 h-full focus:outline-none group">
+                <span id="logo-text-main" class="text-base md:text-lg font-light tracking-[0.25em] text-gold font-english transition-all duration-500 select-none pointer-events-none">AKITU</span>
+            </button>
+            <div class="nav-link-group right-group">
+                <a href="#" class="nav-link-item magnetic-btn" data-lang="en" onclick="openPolicyModal('terms'); closeDynamicIsland(); return false;">TERMS</a>
+                <a href="#" class="nav-link-item magnetic-btn font-arabic" data-lang="ar" onclick="openPolicyModal('terms'); closeDynamicIsland(); return false;">الشروط</a>
+                <a href="#" class="nav-link-item magnetic-btn" data-lang="en" onclick="openPolicyModal('privacy'); closeDynamicIsland(); return false;">PRIVACY</a>
+                <a href="#" class="nav-link-item magnetic-btn font-arabic" data-lang="ar" onclick="openPolicyModal('privacy'); closeDynamicIsland(); return false;">الخصوصية</a>
+            </div>
+        </div>
+    </header>
+    <section class="min-h-screen flex flex-col justify-between pt-28 sm:pt-36 pb-8 sm:pb-12 px-4 sm:px-6 relative overflow-hidden bg-peach transition-colors duration-1000 section-padding">
+        <div class="absolute inset-0 opacity-[0.03] pointer-events-none flex items-center justify-center parallax-slow" data-parallax-speed="0.15">
+            <svg class="w-[85vw] h-[85vw] text-taupe animate-[spin_150s_linear_infinite]" viewBox="0 0 100 100" fill="none">
+                <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="0.15"/>
+                <rect x="20" y="20" width="60" height="60" stroke="currentColor" stroke-width="0.15" transform="rotate(45 50 50)"/>
+                <polygon points="50,5 95,80 5,80" stroke="currentColor" stroke-width="0.15"/>
+            </svg>
+        </div>
+        <div class="max-w-7xl mx-auto w-full my-auto flex flex-col items-center justify-center text-center relative z-10">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 mb-6 sm:mb-8 flex items-center justify-center border border-gold/30 rounded-full bg-whitePink/35 backdrop-blur-md shadow-lg shadow-gold/5 reveal-up magnetic-btn">
+                <img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721094/key_f1fgw4.webp" alt="Akitu Key" class="w-full h-full object-contain scale-125 drop-shadow-md">
+            </div>
+            <h1 class="hero-title-en text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extralight tracking-[0.15em] sm:tracking-[0.22em] text-gold font-english leading-none mb-4 sm:mb-6 select-none reveal-up">
+                WE CREATE<br>NEW BEGINNINGS
+            </h1>
+            <p class="hero-subtitle-ar text-lg sm:text-xl md:text-2xl font-light tracking-[0.1em] sm:tracking-[0.18em] text-taupe/90 font-arabic reveal-up">
+                بوابة البدايات الجديدة
+            </p>
+
+            <div class="flex justify-center items-center gap-5 sm:gap-8 mt-8 sm:mt-10 reveal-up">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full border border-gold/30 bg-whitePink/50 backdrop-blur-md flex items-center justify-center p-3 shadow-lg shadow-gold/5 transition-all duration-500 hover:scale-110 hover:border-gold hover:bg-gold/5 magnetic-btn">
+                    <img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721094/icon-01_rorbti.webp" alt="Wedding Rings"  class="w-full h-full object-contain drop-shadow-sm">
+                </div>
+                <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full border border-gold/30 bg-whitePink/50 backdrop-blur-md flex items-center justify-center p-3 shadow-lg shadow-gold/5 transition-all duration-500 hover:scale-110 hover:border-gold hover:bg-gold/5 magnetic-btn">
+                    <img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721094/icon-12_uwdi1w.webp" alt="Wedding Cake"  class="w-full h-full object-contain drop-shadow-sm">
+                </div>
+                <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full border border-gold/30 bg-whitePink/50 backdrop-blur-md flex items-center justify-center p-3 shadow-lg shadow-gold/5 transition-all duration-500 hover:scale-110 hover:border-gold hover:bg-gold/5 magnetic-btn">
+                    <img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721094/icon-06_lmdpcx.webp" alt="Wedding Photography"  class="w-full h-full object-contain drop-shadow-sm">
+                </div>
+            </div>
+
+            <div class="mt-10 sm:mt-12 reveal-up">
+                <a href="#journey" onclick="smoothScrollTo('#journey'); return false;" class="magnetic-btn relative inline-flex items-center space-x-3 space-x-reverse px-6 sm:px-10 py-3.5 sm:py-5 border border-gold/30 bg-whitePink/60 backdrop-blur-md rounded-full group hover:bg-gold hover:border-gold hover:shadow-xl hover:shadow-gold/10 transition-all duration-500 ripple-container touch-active">
+                    <span class="text-xs sm:text-sm font-semibold tracking-widest text-taupe group-hover:text-whitePink transition-colors font-arabic" data-lang="ar">ابدأ التخطيط الذكي لمناسبتك</span>
+                    <span class="text-xs sm:text-sm font-semibold tracking-widest text-taupe group-hover:text-whitePink transition-colors font-english" data-lang="en">Begin Your Smart Event Blueprint</span>
+                    <i data-lucide="arrow-left" class="w-4 h-4 text-gold group-hover:text-whitePink animate-arrow-rtl rtl:block hidden"></i>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-gold group-hover:text-whitePink animate-arrow-ltr ltr:block hidden"></i>
+                </a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto w-full flex justify-between items-end relative z-10">
+            <span class="text-[8px] sm:text-[9px] tracking-[0.3em] text-taupe/50 font-english uppercase hidden sm:block">Akitu Event Group</span>
+            <a href="#about" onclick="smoothScrollTo('#about'); return false;" class="flex flex-col items-center space-y-2 sm:space-y-3 group mx-auto sm:mx-0">
+                <span class="text-[8px] sm:text-[9px] tracking-widest text-taupe/50 group-hover:text-gold uppercase transition-colors" data-lang="ar">اسحب لأسفل</span>
+                <span class="text-[8px] sm:text-[9px] tracking-widest text-taupe/50 group-hover:text-gold uppercase transition-colors" data-lang="en">Scroll Down</span>
+                <div class="w-[1px] h-10 sm:h-14 bg-gold/30 relative overflow-hidden">
+                    <div class="absolute top-0 inset-x-0 h-4 bg-gold animate-[bounce_2.5s_infinite]"></div>
+                </div>
+            </a>
+            <span class="text-[8px] sm:text-[9px] tracking-[0.3em] text-taupe/50 font-english hidden sm:block">01 / 07</span>
+        </div>
+    </section>
+    <section id="about" class="py-20 sm:py-32 px-4 sm:px-6 bg-whitePink relative border-b border-gold/10 section-padding overflow-hidden">
+        <img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721091/four_qb17ie.webp" alt="" role="presentation" class="absolute bottom-0 right-0 w-80 sm:w-[28rem] md:w-[40rem] opacity-[0.15] max-sm:opacity-[0.07] pointer-events-none object-contain translate-x-[15%] translate-y-[15%] select-none">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-16 items-center relative z-10">
+            <div class="lg:col-span-5 flex justify-center relative reveal-up">
+                <div class="animate-float-cloud">
+                    <div class="tilt-card w-64 sm:w-80 h-[340px] sm:h-[420px] border border-gold/35 rounded-t-full flex items-center justify-center p-3 sm:p-4 bg-peach/15 backdrop-blur-md relative overflow-hidden group shadow-2xl shadow-gold/5 parallax-medium cursor-pointer" tabindex="0" data-parallax-speed="0.1" data-tilt>
+                        <div class="tilt-shine z-20"></div>
+                        <div class="absolute inset-0 bg-gradient-to-b from-peach/20 to-transparent pointer-events-none z-10"></div>
+                        <div class="absolute inset-2 sm:inset-3 border border-gold/20 rounded-t-full overflow-hidden shadow-inner bg-taupe/5 z-0" style="transform: translateZ(0); -webkit-mask-image: -webkit-radial-gradient(white, black);">
+                            <video src="https://res.cloudinary.com/kmoscyfg/video/upload/v1783785358/fsergf_v3v1lm.mov" autoplay loop muted playsinline class="w-full h-full object-cover rounded-t-full grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out">  <p class="hidden">Your browser does not support the video tag. Please use a modern browser.</p>
+                            </video>
+                            <div class="absolute inset-0 bg-gold/10 mix-blend-overlay pointer-events-none transition-opacity duration-700 group-hover:opacity-0 rounded-t-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-7 flex flex-col justify-center space-y-6 sm:space-y-8 reveal-up">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <span class="text-xs sm:text-sm font-semibold tracking-widest text-gold uppercase">02 / BRAND PHILOSOPHY</span>
+                    <span class="h-[1px] w-10 sm:w-14 bg-gold/40"></span>
+                </div>
+                <h2 class="section-title text-3xl sm:text-4xl md:text-5xl font-light text-gold tracking-wide leading-tight font-arabic" data-lang="ar">لماذا أكيتو؟</h2>
+                <h2 class="section-title text-3xl sm:text-4xl md:text-5xl font-light text-gold tracking-wide leading-tight font-english" data-lang="en">Why AKITU?</h2>
+                <div class="space-y-4 sm:space-y-6 text-taupe/85 font-light leading-relaxed text-sm md:text-base font-arabic" data-lang="ar">
+                    <p>تؤمن الشركة بأن حفل الزفاف ليس مناسبة اجتماعية فقط، وإنما <strong class="text-gold font-semibold">مشروع متكامل</strong> يحتاج إلى تخطيط وإدارة وقيادة وتنفيذ.</p>
+                    <p>ولهذا تعتمد <span class="font-english font-medium text-gold">Akitu</span> على منهجية إدارة المشاريع في تنظيم الأعراس، بحيث يتم التعامل مع كل حفل باعتباره مشروعاً مستقلاً يمتلك أهدافاً وجدولاً زمنياً وميزانية وفريق عمل وخطة تنفيذ واضحة.</p>
+                    <p class="border-r-2 border-gold/40 pr-4 py-2 bg-peach/15 italic text-taupe/90 rounded-sm">نحن لا نأخذ مكان العائلة في فرحتها، بل نرفع عنها ضغط التنظيم، ونتولى إدارة التفاصيل، حتى يعيش العروسان والعائلة المناسبة براحة وثقة وتنظيم.</p>
+                    <div class="mt-8">
+                        <h3 class="section-title text-2xl sm:text-3xl md:text-4xl font-light text-gold tracking-wide leading-tight font-arabic mb-4" data-lang="ar">اسم أكيتو</h3>
+                        <p>مستوحى من أقدم احتفالات حضارات وادي الرافدين، حيث كان يرمز إلى البدايات الجديدة وتجدد الحياة، ويُجسّد لحظة الانتقال نحو فصل أكثر إشراقًا. ومن رموز هذا العيد زهرة البابونك، التي تعبّر عن النقاء والبدايات الهادئة والجمال البسيط العميق — وهو المعنى الذي تتبناه أكيتو في كل تجربة تصنعها.</p>
+                    </div>
+                </div>
+                <div class="space-y-4 sm:space-y-6 text-taupe/85 font-light leading-relaxed text-sm md:text-base font-english" data-lang="en">
+                    <p>The brand firmly believes that a wedding is not merely a social gathering, but an <strong class="text-gold font-semibold">integrated engineering project</strong> requiring rigorous planning, governance, and execution.</p>
+                    <p>This is why <span class="text-gold font-medium">Akitu</span> adopts global project management methodologies, handling each event as a separate enterprise with a dedicated scope, fine-tuned timeline, precise budget constraints, and active risk mitigation plans.</p>
+                    <p class="border-l-2 border-gold/40 pl-4 py-2 bg-peach/15 italic text-taupe/90 rounded-sm">We do not replace the family's joy; we shoulder the management burden and choreograph behind-the-scenes mechanics so you can live the dream.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="cinematic-slider" class="py-16 sm:py-24 bg-peach flex flex-col items-center justify-center relative overflow-hidden section-padding reveal-up min-h-screen">
+        
+        <div class="relative w-[90vw] max-w-5xl">
+            <!-- Top Right Flower -->
+            <svg class="parallax-flower absolute -top-12 -right-8 sm:-top-20 sm:-right-16 w-24 h-24 sm:w-40 sm:h-40 text-gold opacity-15 pointer-events-none z-0" viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 0 C55 20, 80 45, 100 50 C80 55, 55 80, 50 100 C45 80, 20 55, 0 50 C20 45, 45 20, 50 0 Z"/>
+                <circle cx="50" cy="50" r="5" fill="#fff" opacity="0.5"/>
+            </svg>
+            
+            <div id="slider-webgl-container" class="relative w-full aspect-video rounded-[26px] overflow-hidden shadow-2xl shadow-gold/10 border border-gold/15 z-10 cursor-pointer">
+                <!-- WebGL Plane will go here -->
+            </div>
+
+            <!-- Bottom Left Flower -->
+            <svg class="parallax-flower absolute -bottom-10 -left-10 sm:-bottom-16 sm:-left-20 w-32 h-32 sm:w-48 sm:h-48 text-taupe opacity-10 pointer-events-none z-0" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 10 Q60 40 90 50 Q60 60 50 90 Q40 60 10 50 Q40 40 50 10 Z"/>
+                <path d="M50 20 Q55 45 80 50 Q55 55 50 80 Q45 55 20 50 Q45 45 50 20 Z" opacity="0.5"/>
+                <circle cx="50" cy="50" r="3" fill="currentColor"/>
+            </svg>
+        </div>
+        <div class="mt-8 sm:mt-12 flex gap-8 sm:gap-12 justify-center items-end z-10 relative">
+            <div class="flex flex-col items-center gap-3">
+                <img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721095/two_x3o1l6.png" alt="Akitu Process Step"  class="w-10 h-10 sm:w-12 sm:h-12 object-contain drop-shadow-sm transition-transform duration-500 hover:scale-110 interactive-img">
+                <div class="w-10 sm:w-12 h-1.5 bg-taupe/20 rounded-full overflow-hidden relative">
+                    <div class="absolute top-0 h-full bg-gold w-full cinematic-progress" id="prog-0" style="clip-path: inset(0 100% 0 0);"></div>
+                </div>
+            </div>
+            <div class="flex flex-col items-center gap-3">
+                <img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721095/two_x3o1l6.png" alt="Akitu Process Step"  class="w-10 h-10 sm:w-12 sm:h-12 object-contain drop-shadow-sm transition-transform duration-500 hover:scale-110 interactive-img">
+                <div class="w-10 sm:w-12 h-1.5 bg-taupe/20 rounded-full overflow-hidden relative">
+                    <div class="absolute top-0 h-full bg-gold w-full cinematic-progress" id="prog-1" style="clip-path: inset(0 100% 0 0);"></div>
+                </div>
+            </div>
+            <div class="flex flex-col items-center gap-3">
+                <img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721095/two_x3o1l6.png" alt="Akitu Process Step"  class="w-10 h-10 sm:w-12 sm:h-12 object-contain drop-shadow-sm transition-transform duration-500 hover:scale-110 interactive-img">
+                <div class="w-10 sm:w-12 h-1.5 bg-taupe/20 rounded-full overflow-hidden relative">
+                    <div class="absolute top-0 h-full bg-gold w-full cinematic-progress" id="prog-2" style="clip-path: inset(0 100% 0 0);"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 sm:py-32 px-4 sm:px-6 bg-lavender/30 relative border-b border-gold/10 section-padding overflow-hidden">
+        <img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721095/logo_x09xbc.webp" alt="" role="presentation" class="absolute bottom-0 left-0 w-80 sm:w-[28rem] md:w-[40rem] opacity-[0.15] max-sm:opacity-[0.07] pointer-events-none object-contain translate-x-0 translate-y-[35%] select-none">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-16 items-center relative z-10">
+            <div class="lg:col-span-7 flex flex-col justify-center space-y-6 sm:space-y-8 lg:order-1 order-2 reveal-up">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <span class="text-xs sm:text-sm font-semibold tracking-widest text-gold uppercase">03 / CORPORATE TRUST</span>
+                    <span class="h-[1px] w-10 sm:w-14 bg-gold/40"></span>
+                </div>
+                <div class="space-y-2">
+                    <p class="text-xs sm:text-sm tracking-[0.3em] text-taupe/60 uppercase font-english">About Akitu Story</p>
+                    <h2 class="section-title text-2xl sm:text-3xl md:text-4xl font-light text-gold font-arabic" data-lang="ar">جهة واحدة... مسؤولية كاملة</h2>
+                    <h2 class="section-title text-2xl sm:text-3xl md:text-4xl font-light text-gold font-english" data-lang="en">One Entity... Full Responsibility</h2>
+                </div>
+                <div class="space-y-4 sm:space-y-6 text-taupe/85 font-light leading-relaxed text-sm md:text-base font-arabic" data-lang="ar">
+                    <p>شركة أكيتو لتنظيم وإدارة الأعراس والمناسبات الخاصة هي شركة عراقية متخصصة في تصميم وإدارة وتنفيذ الأعراس والمناسبات الخاصة وفق منهج احترافي يجمع بين الإدارة المتكاملة، والإبداع، وجودة التنفيذ.</p>
+                    <p>تقدم الشركة حلولاً متكاملة تغطي جميع مراحل التخطيط والتنفيذ، ابتداءً من مرحلة الاستشارة الأولية وحتى انتهاء المناسبة، من خلال فريق متخصص وشبكة واسعة من الشركاء المعتمدين في مختلف القطاعات ذات العلاقة.</p>
+                    <p>وترتكز الشركة على مفهوم الإدارة الشاملة للمناسبة، بحيث يتعامل العميل مع جهة واحدة تتولى الإشراف والتنسيق وإدارة جميع التفاصيل التشغيلية والفنية والخدمية، بما يضمن أعلى مستويات الجودة والراحة.</p>
+                </div>
+                <div class="space-y-4 sm:space-y-6 text-taupe/85 font-light leading-relaxed text-sm md:text-base font-english" data-lang="en">
+                    <p>AKITU is a premier Iraqi firm specializing in the spatial design, logistics, and masterly orchestration of luxury weddings and bespoke private celebrations. We bind strict administrative rigor with poetic visual concepts.</p>
+                    <p>We deliver a complete lifecycle of services, starting from point-zero strategic consultations to on-site production, powered by certified technical directors and elite industry specialists.</p>
+                    <p>Our hallmark is the "Single Point of Contact" concept: instead of juggling dozens of suppliers, you rely solely on us to steer the entire service ecosystem.</p>
+                </div>
+            </div>
+            <div class="lg:col-span-5 flex justify-center lg:order-2 order-1 reveal-up">
+                <div class="animate-float-cloud w-full max-w-sm">
+                    <div class="tilt-card w-full h-full border border-gold/35 bg-whitePink p-6 sm:p-8 rounded-2xl shadow-2xl relative overflow-hidden group interactive-el" data-tilt>
+                        <div class="tilt-shine"></div>
+                    <div class="absolute -top-12 -right-12 w-32 h-32 bg-peach/30 rounded-full blur-2xl parallax-slow" data-parallax-speed="0.2"></div>
+                    <div class="flex flex-col space-y-4 sm:space-y-6 relative z-10">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gold/10 flex items-center justify-center text-gold">
+                            <i data-lucide="shield-check" class="w-6 h-6 sm:w-7 sm:h-7 stroke-[1]"></i>
+                        </div>
+                        <h4 class="text-lg sm:text-xl font-light text-gold font-arabic" data-lang="ar">الميزة التنافسية الكبرى</h4>
+                        <h4 class="text-lg sm:text-xl font-light text-gold font-english" data-lang="en">The Ultimate Assurance</h4>
+                        <p class="text-xs sm:text-sm text-taupe/80 leading-relaxed font-arabic" data-lang="ar">بدلاً من تشتت العميل بين عشرات الأطراف (المصور، الفندق، الصالون، فرقة الموسيقى، المطبخ)، تضمن "أكيتو" أن تكون هي الوجه الوحيد والمسؤول المباشر أمام العميل.</p>
+                        <p class="text-xs sm:text-sm text-taupe/80 leading-relaxed font-english" data-lang="en">Instead of fragmenting your attention between photographers, hotels, florists, and artists, AKITU serves as your consolidated corporate partner and guardian of quality.</p>
+                        <div class="pt-4 border-t border-gold/10 flex items-center justify-between w-full text-[9px] sm:text-[10px] text-gold tracking-widest font-english" dir="ltr">
+                            <span>AKITU TRUST BLUEPRINT</span>
+                            <i data-lucide="heart" class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-gold fill-gold animate-glow-heart"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services" class="py-20 sm:py-32 px-4 sm:px-6 bg-peach transition-colors duration-1000 section-padding">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col items-center text-center mb-12 sm:mb-20 space-y-3 sm:space-y-4 reveal-up">
+                <span class="text-xs sm:text-sm font-semibold tracking-widest text-gold uppercase">04 / THE SERVICES ECOSYSTEM</span>
+                <h2 class="section-title text-2xl sm:text-3xl md:text-5xl font-light text-gold font-arabic" data-lang="ar">الركائز الإدارية والتصميمية الكبرى</h2>
+                <h2 class="section-title text-2xl sm:text-3xl md:text-5xl font-light text-gold font-english" data-lang="en">Core Administrative & Design Services</h2>
+                <p class="text-xs sm:text-sm text-taupe/60 max-w-lg mx-auto" data-lang="ar">
+                    <span class="hidden sm:inline">حرك المؤشر فوق أي خدمة لاستكشاف الدور التشغيلي</span>
+                    <span class="inline sm:hidden">اسحب إلى اليمين لإستكشاف الدور التشغيلي</span>
+                </p>
+                <p class="text-xs sm:text-sm text-taupe/60 max-w-lg mx-auto" data-lang="en">
+                    <span class="hidden sm:inline">Hover over any service to explore its structural role</span>
+                    <span class="inline sm:hidden">Swipe left to explore its structural role</span>
+                </p>
+            </div>
+            <div id="services-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
+                <div class="service-card tilt-card group bg-whitePink/80 backdrop-blur-sm border border-gold/15 p-5 sm:p-8 rounded-2xl flex flex-col justify-between min-h-[260px] sm:min-h-[320px] interactive-el cursor-pointer ripple-container touch-active" data-bg-color="#fedbe2" data-tilt>
+                    <div class="tilt-shine"></div>
+                    <div class="flex justify-between items-start relative z-10">
+                        <div class="text-gold"><img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721092/icon-01_rorbti.webp" alt="Wedding Management" class="w-8 h-8 sm:w-10 sm:h-10 object-contain drop-shadow-sm"></div>
+                        <span class="text-[10px] tracking-widest text-taupe/40 font-english">01</span>
+                    </div>
+                    <div class="mt-6 sm:mt-8 relative z-10">
+                        <h3 class="text-base sm:text-lg font-medium text-gold font-arabic mb-3 sm:mb-4" data-lang="ar">إدارة وتخطيط الأعراس</h3>
+                        <h3 class="text-base sm:text-lg font-medium text-gold font-english mb-3 sm:mb-4" data-lang="en">Wedding Management & Planning</h3>
+                        <p class="text-xs sm:text-sm text-taupe/80 leading-relaxed font-arabic" data-lang="ar">تقديم خطة متكاملة للحفل تبدأ من الفكرة الأولية وحتى التنفيذ النهائي لضمان تجربة منظمة ومميزة.</p>
+                        <p class="text-xs sm:text-sm text-taupe/80 leading-relaxed font-english" data-lang="en">Delivering a cohesive timeline from early visual outlines to day-of operational leadership.</p>
+                    </div>
+                </div>
+                <div class="service-card tilt-card group bg-whitePink/80 backdrop-blur-sm border border-gold/15 p-5 sm:p-8 rounded-2xl flex flex-col justify-between min-h-[260px] sm:min-h-[320px] interactive-el cursor-pointer ripple-container touch-active" data-bg-color="#d0cfee" data-tilt>
+                    <div class="tilt-shine"></div>
+                    <div class="flex justify-between items-start relative z-10">
+                        <div class="text-gold"><img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721090/icon-10_nxv1dl.webp" alt="Private Events" class="w-8 h-8 sm:w-10 sm:h-10 object-contain drop-shadow-sm"></div>
+                        <span class="text-[10px] tracking-widest text-taupe/40 font-english">02</span>
+                    </div>
+                    <div class="mt-6 sm:mt-8 relative z-10">
+                        <h3 class="text-base sm:text-lg font-medium text-gold font-arabic mb-3 sm:mb-4" data-lang="ar">إدارة المناسبات الخاصة</h3>
+                        <h3 class="text-base sm:text-lg font-medium text-gold font-english mb-3 sm:mb-4" data-lang="en">Private Event Curation</h3>
+                        <p class="text-xs sm:text-sm text-taupe/80 leading-relaxed font-arabic" data-lang="ar">تنظيم وإدارة مختلف المناسبات مثل الخطوبة، التخرج، وأعياد الميلاد بأسلوب يعكس الهوية.</p>
+                        <p class="text-xs sm:text-sm text-taupe/80 leading-relaxed font-english" data-lang="en">Custom management of galas, engagements, and graduations reflecting high prestige.</p>
+                    </div>
+                </div>
+                <div class="service-card tilt-card group bg-whitePink/80 backdrop-blur-sm border border-gold/15 p-5 sm:p-8 rounded-2xl flex flex-col justify-between min-h-[260px] sm:min-h-[320px] interactive-el cursor-pointer ripple-container touch-active" data-bg-color="#8ebaa0" data-tilt>
+                    <div class="tilt-shine"></div>
+                    <div class="flex justify-between items-start relative z-10">
+                        <div class="text-gold flex space-x-1 space-x-reverse"><img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721093/icon-08_yysboz.webp" alt="Vendors" class="w-8 h-8 sm:w-10 sm:h-10 object-contain drop-shadow-sm"><img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721093/icon-09_g7upqq.webp" alt="Vendors" class="w-8 h-8 sm:w-10 sm:h-10 object-contain drop-shadow-sm"></div>
+                        <span class="text-[10px] tracking-widest text-taupe/40 font-english">03</span>
+                    </div>
+                    <div class="mt-6 sm:mt-8 relative z-10">
+                        <h3 class="text-base sm:text-lg font-medium text-gold font-arabic mb-3 sm:mb-4" data-lang="ar">إدارة الموردين</h3>
+                        <h3 class="text-base sm:text-lg font-medium text-gold font-english mb-3 sm:mb-4" data-lang="en">Vendor Harmonization</h3>
+                        <p class="text-xs sm:text-sm text-taupe/80 leading-relaxed font-arabic" data-lang="ar">اختيار والتنسيق مع أفضل الموردين لضمان انسجام أدائهم ضمن خطة واحدة.</p>
+                        <p class="text-xs sm:text-sm text-taupe/80 leading-relaxed font-english" data-lang="en">Vetting and organizing elite global suppliers into a streamlined master plan.</p>
+                    </div>
+                </div>
+                <div class="service-card tilt-card group bg-whitePink/80 backdrop-blur-sm border border-gold/15 p-5 sm:p-8 rounded-2xl flex flex-col justify-between min-h-[260px] sm:min-h-[320px] interactive-el cursor-pointer ripple-container touch-active" data-bg-color="#fff0f4" data-tilt>
+                    <div class="tilt-shine"></div>
+                    <div class="flex justify-between items-start relative z-10">
+                        <div class="text-gold"><i data-lucide="file-text" class="w-6 h-6 sm:w-8 sm:h-8 stroke-[1]"></i></div>
+                        <span class="text-[10px] tracking-widest text-taupe/40 font-english">04</span>
+                    </div>
+                    <div class="mt-6 sm:mt-8 relative z-10">
+                        <h3 class="text-base sm:text-lg font-medium text-gold font-arabic mb-3 sm:mb-4" data-lang="ar">إدارة العقود</h3>
+                        <h3 class="text-base sm:text-lg font-medium text-gold font-english mb-3 sm:mb-4" data-lang="en">Contract Management</h3>
+                        <p class="text-xs sm:text-sm text-taupe/80 leading-relaxed font-arabic" data-lang="ar">تنظيم ومراجعة جميع العقود مع الموردين لضمان وضوح الشروط وحماية حقوق العميل.</p>
+                        <p class="text-xs sm:text-sm text-taupe/80 leading-relaxed font-english" data-lang="en">Securing clear terms and legal defense across external supplier partnerships.</p>
+                    </div>
+                </div>
+                <div class="service-card tilt-card group bg-whitePink/80 backdrop-blur-sm border border-gold/15 p-5 sm:p-8 rounded-2xl flex flex-col justify-between min-h-[260px] sm:min-h-[320px] interactive-el cursor-pointer ripple-container touch-active" data-bg-color="#d0cfee" data-tilt>
+                    <div class="tilt-shine"></div>
+                    <div class="flex justify-between items-start relative z-10">
+                        <div class="text-gold"><img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721090/icon-16_gre2ym.webp" alt="Visual Identity" class="w-8 h-8 sm:w-10 sm:h-10 object-contain drop-shadow-sm"></div>
+                        <span class="text-[10px] tracking-widest text-taupe/40 font-english">05</span>
+                    </div>
+                    <div class="mt-6 sm:mt-8 relative z-10">
+                        <h3 class="text-base sm:text-lg font-medium text-gold font-arabic mb-3 sm:mb-4" data-lang="ar">تصميم الهوية البصرية</h3>
+                        <h3 class="text-base sm:text-lg font-medium text-gold font-english mb-3 sm:mb-4" data-lang="en">Bespoke Visual Identity</h3>
+                        <p class="text-xs sm:text-sm text-taupe/80 leading-relaxed font-arabic" data-lang="ar">ابتكار هوية متكاملة تشمل الألوان والديكور والدعوات تعبيراً عن شخصية العميل.</p>
+                        <p class="text-xs sm:text-sm text-taupe/80 leading-relaxed font-english" data-lang="en">Creating unified event palettes, custom typography, and physical scenography.</p>
+                    </div>
+                </div>
+                <div class="service-card tilt-card group bg-whitePink/80 backdrop-blur-sm border border-gold/15 p-5 sm:p-8 rounded-2xl flex flex-col justify-between min-h-[260px] sm:min-h-[320px] interactive-el cursor-pointer ripple-container touch-active" data-bg-color="#fedbe2" data-tilt>
+                    <div class="tilt-shine"></div>
+                    <div class="flex justify-between items-start relative z-10">
+                        <div class="text-gold"><img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721090/icon-11_oetwaz.webp" alt="Guest Experience" class="w-8 h-8 sm:w-10 sm:h-10 object-contain drop-shadow-sm"></div>
+                        <span class="text-[10px] tracking-widest text-taupe/40 font-english">06</span>
+                    </div>
+                    <div class="mt-6 sm:mt-8 relative z-10">
+                        <h3 class="text-base sm:text-lg font-medium text-gold font-arabic mb-3 sm:mb-4" data-lang="ar">تصميم تجربة الضيوف</h3>
+                        <h3 class="text-base sm:text-lg font-medium text-gold font-english mb-3 sm:mb-4" data-lang="en">Guest Experience Design</h3>
+                        <p class="text-xs sm:text-sm text-taupe/80 leading-relaxed font-arabic" data-lang="ar">تخطيط رحلة الضيف داخل الحفل لضمان تجربة مريحة وممتعة لا تُنسى.</p>
+                        <p class="text-xs sm:text-sm text-taupe/80 leading-relaxed font-english" data-lang="en">Choreographing arrival rituals, personal amenities, and dynamic crowd paths.</p>
+                    </div>
+                </div>
+                <div class="service-card tilt-card group bg-whitePink/80 backdrop-blur-sm border border-gold/15 p-5 sm:p-8 rounded-2xl flex flex-col justify-between min-h-[260px] sm:min-h-[320px] interactive-el cursor-pointer ripple-container touch-active" data-bg-color="#8ebaa0" data-tilt>
+                    <div class="tilt-shine"></div>
+                    <div class="flex justify-between items-start relative z-10">
+                        <div class="text-gold"><i data-lucide="navigation" class="w-6 h-6 sm:w-8 sm:h-8 stroke-[1]"></i></div>
+                        <span class="text-[10px] tracking-widest text-taupe/40 font-english">07</span>
+                    </div>
+                    <div class="mt-6 sm:mt-8 relative z-10">
+                        <h3 class="text-base sm:text-lg font-medium text-gold font-arabic mb-3 sm:mb-4" data-lang="ar">إدارة التنفيذ الميداني</h3>
+                        <h3 class="text-base sm:text-lg font-medium text-gold font-english mb-3 sm:mb-4" data-lang="en">On-Site Orchestration</h3>
+                        <p class="text-xs sm:text-sm text-taupe/80 leading-relaxed font-arabic" data-lang="ar">الإشراف المباشر على سير الحفل في يوم المناسبة وضمان تنفيذ أدق التفاصيل.</p>
+                        <p class="text-xs sm:text-sm text-taupe/80 leading-relaxed font-english" data-lang="en">Active technical supervision of sound, lighting, and timeline cues on-site.</p>
+                    </div>
+                </div>
+                <div class="service-card tilt-card group bg-whitePink/80 backdrop-blur-sm border border-gold/15 p-5 sm:p-8 rounded-2xl flex flex-col justify-between min-h-[260px] sm:min-h-[320px] interactive-el cursor-pointer ripple-container touch-active" data-bg-color="#fff0f4" data-tilt>
+                    <div class="tilt-shine"></div>
+                    <div class="flex justify-between items-start relative z-10">
+                        <div class="text-gold"><i data-lucide="clock" class="w-6 h-6 sm:w-8 sm:h-8 stroke-[1]"></i></div>
+                        <span class="text-[10px] tracking-widest text-taupe/40 font-english">08</span>
+                    </div>
+                    <div class="mt-6 sm:mt-8 relative z-10">
+                        <h3 class="text-base sm:text-lg font-medium text-gold font-arabic mb-3 sm:mb-4" data-lang="ar">إدارة الجداول الزمنية</h3>
+                        <h3 class="text-base sm:text-lg font-medium text-gold font-english mb-3 sm:mb-4" data-lang="en">Chrono-Scheduling</h3>
+                        <p class="text-xs sm:text-sm text-taupe/80 leading-relaxed font-arabic" data-lang="ar">إعداد جدول زمني دقيق لكل مراحل التحضير والالتزام التام بالمواعيد.</p>
+                        <p class="text-xs sm:text-sm text-taupe/80 leading-relaxed font-english" data-lang="en">Enforcing structural micro-milestones to eliminate delays entirely.</p>
+                    </div>
+                </div>
+                <div class="service-card tilt-card group bg-whitePink/80 backdrop-blur-sm border border-gold/15 p-5 sm:p-8 rounded-2xl flex flex-col justify-between min-h-[260px] sm:min-h-[320px] interactive-el cursor-pointer ripple-container touch-active" data-bg-color="#8ebaa0" data-tilt>
+                    <div class="tilt-shine"></div>
+                    <div class="flex justify-between items-start relative z-10">
+                        <div class="text-gold"><i data-lucide="coins" class="w-6 h-6 sm:w-8 sm:h-8 stroke-[1]"></i></div>
+                        <span class="text-[10px] tracking-widest text-taupe/40 font-english">09</span>
+                    </div>
+                    <div class="mt-6 sm:mt-8 relative z-10">
+                        <h3 class="text-base sm:text-lg font-medium text-gold font-arabic mb-3 sm:mb-4" data-lang="ar">إدارة الميزانية</h3>
+                        <h3 class="text-base sm:text-lg font-medium text-gold font-english mb-3 sm:mb-4" data-lang="en">Strategic Budgeting</h3>
+                        <p class="text-xs sm:text-sm text-taupe/80 leading-relaxed font-arabic" data-lang="ar">توزيع الميزانية بشكل ذكي يحقق أعلى جودة وتجنب الهدر المالي.</p>
+                        <p class="text-xs sm:text-sm text-taupe/80 leading-relaxed font-english" data-lang="en">Allocating fiscal resources intelligently, tracking waste to secure capital.</p>
+                    </div>
+                </div>
+                <div class="service-card tilt-card group bg-whitePink/80 backdrop-blur-sm border border-gold/15 p-5 sm:p-8 rounded-2xl flex flex-col justify-between min-h-[260px] sm:min-h-[320px] interactive-el cursor-pointer ripple-container touch-active" data-bg-color="#d0cfee" data-tilt>
+                    <div class="tilt-shine"></div>
+                    <div class="flex justify-between items-start relative z-10">
+                        <div class="text-gold"><i data-lucide="help-circle" class="w-6 h-6 sm:w-8 sm:h-8 stroke-[1]"></i></div>
+                        <span class="text-[10px] tracking-widest text-taupe/40 font-english">10</span>
+                    </div>
+                    <div class="mt-6 sm:mt-8 relative z-10">
+                        <h3 class="text-base sm:text-lg font-medium text-gold font-arabic mb-3 sm:mb-4" data-lang="ar">خدمات الاستشارات</h3>
+                        <h3 class="text-base sm:text-lg font-medium text-gold font-english mb-3 sm:mb-4" data-lang="en">VIP Advisory Consult</h3>
+                        <p class="text-xs sm:text-sm text-taupe/80 leading-relaxed font-arabic" data-lang="ar">تقديم استشارات احترافية للعملاء لإرشادهم لأفضل القرارات والتوجيهات الفنية.</p>
+                        <p class="text-xs sm:text-sm text-taupe/80 leading-relaxed font-english" data-lang="en">Providing clinical, highly tailored spatial guidance on demand.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="infrastructure-section" class="py-20 sm:py-32 px-4 sm:px-6 bg-whitePink relative border-b border-gold/10 section-padding">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col items-center text-center mb-10 sm:mb-16 space-y-3 sm:space-y-4 reveal-up">
+                <span class="text-xs sm:text-sm font-semibold tracking-widest text-gold uppercase">05 / THE INFRASTRUCTURE RENDER</span>
+                <h2 class="section-title text-2xl sm:text-3xl md:text-5xl font-light text-gold font-arabic" data-lang="ar">الخدمات المساندة</h2>
+                <h2 class="section-title text-2xl sm:text-3xl md:text-5xl font-light text-gold font-english" data-lang="en">Supporting Sensory Infrastructure</h2>
+            </div>
+            <div id="infrastructure-list" class="flex flex-col border-t border-gold/10">
+                <div class="grid grid-cols-1 md:grid-cols-12 py-5 sm:py-8 border-b border-gold/10 hover:bg-peach/10 transition-colors px-3 sm:px-4 group items-center reveal-up ripple-container touch-active">
+                    <div class="md:col-span-2 text-gold group-hover:scale-110 transition-transform"><img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721090/icon-07_ty5ngh.webp" alt="Venues" class="w-10 h-10 sm:w-12 sm:h-12 object-contain drop-shadow-sm"></div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-arabic" data-lang="ar">القاعات</div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-english" data-lang="en">Elite Venues</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-arabic" data-lang="ar">توفير خيارات متنوعة من القاعات المناسبة لطبيعة الحفل وعدد الحضور مع الإشراف على جاهزيتها.</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-english" data-lang="en">Securing prestigious halls, private estates, and botanical environments suitable to size.</div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 py-5 sm:py-8 border-b border-gold/10 hover:bg-peach/10 transition-colors px-3 sm:px-4 group items-center reveal-up ripple-container touch-active">
+                    <div class="md:col-span-2 text-gold group-hover:scale-110 transition-transform"><img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721091/icon-14_zlnpwt.webp" alt="Hotels" class="w-10 h-10 sm:w-12 sm:h-12 object-contain drop-shadow-sm"></div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-arabic" data-lang="ar">الفنادق</div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-english" data-lang="en">Luxury Hotels</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-arabic" data-lang="ar">تنسيق حجوزات الفنادق للضيوف أو العروسين ضمن باقات مريحة ومميزة.</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-english" data-lang="en">Coordinating 5-star room blocks and exclusive concierge treatments for key delegates.</div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 py-5 sm:py-8 border-b border-gold/10 hover:bg-peach/10 transition-colors px-3 sm:px-4 group items-center reveal-up ripple-container touch-active">
+                    <div class="md:col-span-2 text-gold group-hover:scale-110 transition-transform"><img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721091/icon-06_lmdpcx.webp" alt="Catering" class="w-10 h-10 sm:w-12 sm:h-12 object-contain drop-shadow-sm"></div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-arabic" data-lang="ar">الضيافة</div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-english" data-lang="en">Catering & Master Cakes</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-arabic" data-lang="ar">تنظيم خدمات الطعام والشراب وفق أعلى معايير الجودة وبما يتناسب مع طبيعة المناسبة.</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-english" data-lang="en">Choreographing fine-dining banquets and structurally complex artisanal cakes.</div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 py-5 sm:py-8 border-b border-gold/10 hover:bg-peach/10 transition-colors px-3 sm:px-4 group items-center reveal-up ripple-container touch-active">
+                    <div class="md:col-span-2 text-gold group-hover:scale-110 transition-transform"><img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721091/icon-02_n4p7ki.webp" alt="Photography" class="w-10 h-10 sm:w-12 sm:h-12 object-contain drop-shadow-sm"></div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-arabic" data-lang="ar">التصوير</div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-english" data-lang="en">Cinematography</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-arabic" data-lang="ar">توفير فرق تصوير احترافية لتوثيق اللحظات بأسلوب سينمائي عالي الجودة..</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-english" data-lang="en">Harnessing cinema-grade capture, architectural framing, and masterclass edit directions.</div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 py-5 sm:py-8 border-b border-gold/10 hover:bg-peach/10 transition-colors px-3 sm:px-4 group items-center reveal-up ripple-container touch-active">
+                    <div class="md:col-span-2 text-gold group-hover:scale-110 transition-transform"><img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721092/icon-03_bvbhz7.webp" alt="Logistics" class="w-10 h-10 sm:w-12 sm:h-12 object-contain drop-shadow-sm"></div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-arabic" data-lang="ar">السفر</div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-english" data-lang="en">VIP Fleet Logistics</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-arabic" data-lang="ar">تنظيم ترتيبات السفر المتعلقة بالمناسبة أو ما بعدها بسهولة واحترافية..</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-english" data-lang="en">Securing armored transport, luxury motorcades, and streamlined shuttle movements.</div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 py-5 sm:py-8 border-b border-gold/10 hover:bg-peach/10 transition-colors px-3 sm:px-4 group items-center reveal-up ripple-container touch-active">
+                    <div class="md:col-span-2 text-gold group-hover:scale-110 transition-transform"><img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721093/icon-05_rrgfoe.webp" alt="Honeymoon" class="w-10 h-10 sm:w-12 sm:h-12 object-contain drop-shadow-sm"></div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-arabic" data-lang="ar">شهر العسل</div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-english" data-lang="en">Honeymoon Advisory</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-arabic" data-lang="ar">تصميم برامج شهر عسل مخصصة تناسب ذوق العروسين وتمنحهم تجربة استثنائية.</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-english" data-lang="en">Designing isolated private island itineraries and ultra-luxurious remote resort bookings.</div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 py-5 sm:py-8 border-b border-gold/10 hover:bg-peach/10 transition-colors px-3 sm:px-4 group items-center reveal-up ripple-container touch-active">
+                    <div class="md:col-span-2 text-gold group-hover:scale-110 transition-transform"><img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721093/icon-04_dxxbm9.webp" alt="Beauty Salons" class="w-10 h-10 sm:w-12 sm:h-12 object-contain drop-shadow-sm"></div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-arabic" data-lang="ar">صالونات التجميل النسائية</div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-english" data-lang="en">Women's Beauty Salons</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-arabic" data-lang="ar">في “أكيتو”، نؤمن أن تجربة العرس المتكاملة تبدأ من أدق التفاصيل، لذلك نحرص على التعاون مع أفضل صالونات التجميل النسائية في بغداد لضمان تقديم أعلى مستوى من الخدمة لعملائنا.</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-english" data-lang="en">At AKITU, we believe the complete wedding experience begins with the finest details, partnering with Baghdad's top beauty salons to deliver the highest standard of service.</div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 py-5 sm:py-8 border-b border-gold/10 hover:bg-peach/10 transition-colors px-3 sm:px-4 group items-center reveal-up ripple-container touch-active">
+                    <div class="md:col-span-2 text-gold group-hover:scale-110 transition-transform"><img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721093/icon-08_yysboz.webp" alt="Dresses" class="w-10 h-10 sm:w-12 sm:h-12 object-contain drop-shadow-sm"></div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-arabic" data-lang="ar">فساتين الحفلات والزفاف</div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-english" data-lang="en">Bridal & Evening Gowns</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-arabic" data-lang="ar">في “أكيتو”، نحرص على توفير تجربة متكاملة للعروس من خلال التعاون مع أفضل مزودي فساتين الزفاف والحفلات في بغداد.</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-english" data-lang="en">AKITU ensures a seamless bridal journey by collaborating with the finest providers of luxury wedding and evening gowns in Baghdad.</div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 py-5 sm:py-8 border-b border-gold/10 hover:bg-peach/10 transition-colors px-3 sm:px-4 group items-center reveal-up ripple-container touch-active">
+                    <div class="md:col-span-2 text-gold group-hover:scale-110 transition-transform"><img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721090/icon-16_gre2ym.webp" alt="Men's Grooming" class="w-10 h-10 sm:w-12 sm:h-12 object-contain drop-shadow-sm"></div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-arabic" data-lang="ar">صالونات الحلاقة والعناية بالرجل</div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-english" data-lang="en">Men's Grooming Salons</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-arabic" data-lang="ar">في “أكيتو”، نهتم بأدق تفاصيل إطلالة العريس، لذلك نتعاون مع أفضل صالونات الحلاقة والعناية الرجالية في بغداد.</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-english" data-lang="en">We focus on every detail of the groom's appearance, partnering with the most prestigious men's grooming salons in Baghdad.</div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 py-5 sm:py-8 border-b border-gold/10 hover:bg-peach/10 transition-colors px-3 sm:px-4 group items-center reveal-up ripple-container touch-active">
+                    <div class="md:col-span-2 text-gold group-hover:scale-110 transition-transform"><img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721093/icon-09_g7upqq.webp" alt="Suits" class="w-10 h-10 sm:w-12 sm:h-12 object-contain drop-shadow-sm"></div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-arabic" data-lang="ar">بدلات الزفاف الرجالية</div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-english" data-lang="en">Men's Wedding Suits</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-arabic" data-lang="ar">يوفر “أكيتو” تعاوناً مع نخبة من مزودي بدلات الزفاف الرجالية الراقية، لضمان إطلالة أنيقة تليق بالعريس في يومه المميز.</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-english" data-lang="en">AKITU offers collaborations with an elite selection of premium men's suit providers, guaranteeing a distinguished and elegant look for the groom.</div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 py-5 sm:py-8 border-b border-gold/10 hover:bg-peach/10 transition-colors px-3 sm:px-4 group items-center reveal-up ripple-container touch-active">
+                    <div class="md:col-span-2 text-gold group-hover:scale-110 transition-transform"><i data-lucide="car" class="w-8 h-8 sm:w-10 sm:h-10 stroke-[1]"></i></div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-arabic" data-lang="ar">سيارة الزفاف</div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-english" data-lang="en">Wedding Vehicles</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-arabic" data-lang="ar">في “أكيتو”، نوفر مجموعة مختارة من السيارات الكلاسيكية والفاخرة لتكون جزءاً من تجربة الزفاف والتصوير, بما يضيف لمسة أناقة وتميّز ليومكم الخاص.</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-english" data-lang="en">We provide a curated selection of classic and luxury vehicles to complement your wedding experience and photography, adding a touch of prestige to your special day.</div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 py-5 sm:py-8 border-b border-gold/10 hover:bg-peach/10 transition-colors px-3 sm:px-4 group items-center reveal-up ripple-container touch-active">
+                    <div class="md:col-span-2 text-gold group-hover:scale-110 transition-transform"><img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721090/icon-11_oetwaz.webp" alt="Cake" class="w-10 h-10 sm:w-12 sm:h-12 object-contain drop-shadow-sm"></div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-arabic" data-lang="ar">الكيك</div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-english" data-lang="en">Artisanal Cakes</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-arabic" data-lang="ar">في "أكيتو"، نتعاون مع نخبة من المختصين الذين يهتمون بأدق التفاصيل، من تصميم الكيك بما يتناسب مع ثيم الحفل، إلى جودة الطعم وتنوع الخيارات التي تلبي مختلف الأذواق.</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-english" data-lang="en">We partner with elite culinary artisans who focus on precise cake designs matching the event's theme, alongside premium flavors satisfying diverse tastes.</div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 py-5 sm:py-8 border-b border-gold/10 hover:bg-peach/10 transition-colors px-3 sm:px-4 group items-center reveal-up ripple-container touch-active">
+                    <div class="md:col-span-2 text-gold group-hover:scale-110 transition-transform"><img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721092/icon-15_tsc7dr.webp" alt="Music" class="w-10 h-10 sm:w-12 sm:h-12 object-contain drop-shadow-sm"></div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-arabic" data-lang="ar">الموسيقى والفرق الفنية</div>
+                    <div class="md:col-span-3 text-base sm:text-lg font-light text-gold font-english" data-lang="en">Music & Entertainment</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-arabic" data-lang="ar">في “أكيتو”، نحرص على أن تكون الموسيقى هي إيقاع الحفل وروحه، من خلال التعاون مع أفضل الـ DJ في العراق، إلى جانب مجموعة من المطربين والفرق الموسيقية المتنوعة.</div>
+                    <div class="md:col-span-7 text-xs sm:text-sm text-taupe/70 leading-relaxed font-english" data-lang="en">Ensuring music remains the soul and rhythm of the event, AKITU collaborates with Iraq's top DJs, alongside a diverse array of singers and musical bands.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="journey" class="py-20 sm:py-32 px-4 sm:px-6 bg-lavender/40 relative section-padding">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col items-center text-center mb-10 sm:mb-16 space-y-3 sm:space-y-4 reveal-up">
+                <span class="text-xs sm:text-sm font-semibold tracking-widest text-gold uppercase">06 / THE INTERACTIVE BUILDER</span>
+                <h2 class="section-title text-2xl sm:text-3xl md:text-5xl font-light text-gold font-arabic" data-lang="ar">صمم مناسبتك وهيكل مشروعك</h2>
+                <h2 class="section-title text-2xl sm:text-3xl md:text-5xl font-light text-gold font-english" data-lang="en">Design Your Custom Event Blueprint</h2>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center bg-whitePink border border-gold/20 p-5 sm:p-8 rounded-3xl shadow-2xl relative overflow-hidden reveal-up">
+                <div class="absolute -bottom-16 -left-16 w-44 h-44 bg-peach/30 rounded-full blur-3xl parallax-slow" data-parallax-speed="0.1"></div>
+                <div id="journey-form-panel" class="lg:col-span-7 space-y-6 sm:space-y-8 relative z-10">
+                    <div class="space-y-3 sm:space-y-4">
+                        <label class="text-xs sm:text-sm font-semibold uppercase tracking-widest text-gold" data-lang="ar">١. حدد نوع المناسبة</label>
+                        <label class="text-xs sm:text-sm font-semibold uppercase tracking-widest text-gold" data-lang="en">1. Select Occasion Type</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
+                            <button onclick="setOccasion('wedding')" class="occasion-btn py-2.5 sm:py-3 px-2 border border-gold/20 text-xs sm:text-sm font-medium rounded-xl hover:border-gold hover:bg-peach/15 transition-all font-arabic text-taupe select-none bg-peach/40 border-gold ripple-container touch-active" data-lang="ar" id="btn-wedding-ar">حفل زفاف</button>
+                            <button onclick="setOccasion('wedding')" class="occasion-btn py-2.5 sm:py-3 px-2 border border-gold/20 text-xs sm:text-sm font-medium rounded-xl hover:border-gold hover:bg-peach/15 transition-all font-english text-taupe select-none bg-peach/40 border-gold ripple-container touch-active" data-lang="en" id="btn-wedding-en">Wedding</button>
+                            <button onclick="setOccasion('gala')" class="occasion-btn py-2.5 sm:py-3 px-2 border border-gold/20 text-xs sm:text-sm font-medium rounded-xl hover:border-gold hover:bg-peach/15 transition-all font-arabic text-taupe select-none ripple-container touch-active" data-lang="ar" id="btn-gala-ar">حفل تخرج</button>
+                            <button onclick="setOccasion('gala')" class="occasion-btn py-2.5 sm:py-3 px-2 border border-gold/20 text-xs sm:text-sm font-medium rounded-xl hover:border-gold hover:bg-peach/15 transition-all font-english text-taupe select-none ripple-container touch-active" data-lang="en" id="btn-gala-en">Graduation</button>
+                            <button onclick="setOccasion('private')" class="occasion-btn py-2.5 sm:py-3 px-2 border border-gold/20 text-xs sm:text-sm font-medium rounded-xl hover:border-gold hover:bg-peach/15 transition-all font-arabic text-taupe select-none ripple-container touch-active" data-lang="ar" id="btn-private-ar">مناسبة خاصة</button>
+                            <button onclick="setOccasion('private')" class="occasion-btn py-2.5 sm:py-3 px-2 border border-gold/20 text-xs sm:text-sm font-medium rounded-xl hover:border-gold hover:bg-peach/15 transition-all font-english text-taupe select-none ripple-container touch-active" data-lang="en" id="btn-private-en">Private Gala</button>
+                            <button onclick="setOccasion('conference')" class="occasion-btn py-2.5 sm:py-3 px-2 border border-gold/20 text-xs sm:text-sm font-medium rounded-xl hover:border-gold hover:bg-peach/15 transition-all font-arabic text-taupe select-none ripple-container touch-active" data-lang="ar" id="btn-conference-ar">تنظيم المؤتمرات</button>
+                            <button onclick="setOccasion('conference')" class="occasion-btn py-2.5 sm:py-3 px-2 border border-gold/20 text-xs sm:text-sm font-medium rounded-xl hover:border-gold hover:bg-peach/15 transition-all font-english text-taupe select-none ripple-container touch-active" data-lang="en" id="btn-conference-en">Conferences</button>
+                            <button onclick="setOccasion('concert')" class="occasion-btn py-2.5 sm:py-3 px-2 border border-gold/20 text-xs sm:text-sm font-medium rounded-xl hover:border-gold hover:bg-peach/15 transition-all font-arabic text-taupe select-none ripple-container touch-active" data-lang="ar" id="btn-concert-ar">الحفلات الموسيقية</button>
+                            <button onclick="setOccasion('concert')" class="occasion-btn py-2.5 sm:py-3 px-2 border border-gold/20 text-xs sm:text-sm font-medium rounded-xl hover:border-gold hover:bg-peach/15 transition-all font-english text-taupe select-none ripple-container touch-active" data-lang="en" id="btn-concert-en">Musical Concerts</button>
+                        </div>
+                    </div>
+                    <div class="space-y-3 sm:space-y-4">
+                        <label class="text-xs sm:text-sm font-semibold uppercase tracking-widest text-gold" data-lang="ar">٢. اختر روافد البناء والمساعدة</label>
+                        <label class="text-xs sm:text-sm font-semibold uppercase tracking-widest text-gold" data-lang="en">2. Toggle Key Services</label>
+                        <div class="flex flex-wrap gap-2">
+                            <button onclick="toggleWizardService(0)" class="wiz-serv-btn px-3 sm:px-4 py-1.5 sm:py-2 border border-gold/15 rounded-full text-xs sm:text-sm font-medium hover:border-gold transition-colors flex items-center gap-2.5 sm:gap-3 ripple-container touch-active" id="ws-0">
+                                <img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721090/icon-07_ty5ngh.webp" alt="Venue Advisory" class="w-4 h-4 sm:w-5 sm:h-5 object-contain grayscale opacity-50 transition-all duration-300" id="ws-dot-0">
+                                <span data-lang="ar">إدارة القاعات</span>
+                                <span data-lang="en">Venue Advisory</span>
+                            </button>
+                            <button onclick="toggleWizardService(1)" class="wiz-serv-btn px-3 sm:px-4 py-1.5 sm:py-2 border border-gold/15 rounded-full text-xs sm:text-sm font-medium hover:border-gold transition-colors flex items-center gap-2.5 sm:gap-3 ripple-container touch-active" id="ws-1">
+                                <img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721091/icon-06_lmdpcx.webp" alt="Luxury Dining" class="w-4 h-4 sm:w-5 sm:h-5 object-contain grayscale opacity-50 transition-all duration-300" id="ws-dot-1">
+                                <span data-lang="ar">المطبخ والضيافة</span>
+                                <span data-lang="en">Luxury Dining</span>
+                            </button>
+                            <button onclick="toggleWizardService(2)" class="wiz-serv-btn px-3 sm:px-4 py-1.5 sm:py-2 border border-gold/15 rounded-full text-xs sm:text-sm font-medium hover:border-gold transition-colors flex items-center gap-2.5 sm:gap-3 ripple-container touch-active" id="ws-2">
+                                <img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721091/icon-02_n4p7ki.webp" alt="Master Capture" class="w-4 h-4 sm:w-5 sm:h-5 object-contain grayscale opacity-50 transition-all duration-300" id="ws-dot-2">
+                                <span data-lang="ar">تصوير فني سينمائي</span>
+                                <span data-lang="en">Master Capture</span>
+                            </button>
+                            <button onclick="toggleWizardService(3)" class="wiz-serv-btn px-3 sm:px-4 py-1.5 sm:py-2 border border-gold/15 rounded-full text-xs sm:text-sm font-medium hover:border-gold transition-colors flex items-center gap-2.5 sm:gap-3 ripple-container touch-active" id="ws-3">
+                                <img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721092/icon-15_tsc7dr.webp" alt="Sound Scapes" class="w-4 h-4 sm:w-5 sm:h-5 object-contain grayscale opacity-50 transition-all duration-300" id="ws-dot-3">
+                                <span data-lang="ar">التصميم الصوتي والموسيقى</span>
+                                <span data-lang="en">Sound Scapes</span>
+                            </button>
+                            <button onclick="toggleWizardService(4)" class="wiz-serv-btn px-3 sm:px-4 py-1.5 sm:py-2 border border-gold/15 rounded-full text-xs sm:text-sm font-medium hover:border-gold transition-colors flex items-center gap-2.5 sm:gap-3 ripple-container touch-active" id="ws-4">
+                                <img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721093/icon-05_rrgfoe.webp" alt="Honeymoon Flight" class="w-4 h-4 sm:w-5 sm:h-5 object-contain grayscale opacity-50 transition-all duration-300" id="ws-dot-4">
+                                <span data-lang="ar">رحلات شهر العسل</span>
+                                <span data-lang="en">Honeymoon Flight</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="space-y-3 sm:space-y-4">
+                        <div class="flex justify-between items-center text-xs sm:text-sm font-semibold uppercase tracking-widest text-gold">
+                            <span data-lang="ar">٣. الميزانية التقديرية</span>
+                            <span data-lang="en">3. Budget Allocation</span>
+                            <span class="font-english" id="budget-val">$25,000+</span>
+                        </div>
+                        <input type="range" min="0" max="147" step="1" value="102" class="w-full" id="budget-slider" oninput="updateBudget(this.value)">
+                    </div>
+                    <form id="wizard-form" onsubmit="handleWizardSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+                            <input type="text" id="wizard-name" required placeholder="الاسم الكريم / Your Name" class="bg-transparent border-b border-gold/20 focus:border-gold py-2 text-xs sm:text-sm font-medium focus:outline-none text-taupe font-arabic px-1 transition-colors" oninput="this.value = this.value.replace(/[^a-zA-Z\u0600-\u06FF\s]/g, '')">
+                            <input type="tel" id="wizard-phone" required placeholder="رقم الهاتف / Phone Number" class="bg-transparent border-b border-gold/20 focus:border-gold py-2 text-xs sm:text-sm font-medium focus:outline-none text-taupe font-english px-1 transition-colors" oninput="this.value = this.value.replace(/[^0-9+]/g, '')">
+                        </div>
+                        <button type="submit" class="magnetic-btn w-full bg-burntOrange hover:bg-burntOrange/90 text-whitePink text-xs sm:text-sm uppercase tracking-[0.15em] py-3.5 sm:py-4 rounded-xl font-medium transition-all duration-300 shadow-xl shadow-burntOrange/10 hover:shadow-burntOrange/20 ripple-container touch-active">
+                            <span data-lang="ar">أحجز مناسبتك</span>
+                            <span data-lang="en">Submit Event Requirements</span>
+                        </button>
+                    </form>
+                </div>
+                <div id="journey-success-panel" class="lg:col-span-7 success-state flex-col items-center justify-center text-center py-8 sm:py-12 relative z-10 space-y-6">
+                    <div class="mx-auto">
+                        <svg class="success-checkmark" viewBox="0 0 80 80" id="success-svg">
+                            <circle class="checkmark-circle" cx="40" cy="40" r="38" id="checkmark-circle"/>
+                            <polyline class="checkmark-check" points="22,42 34,54 58,28" id="checkmark-check"/>
+                        </svg>
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-lg sm:text-xl font-light text-gold font-arabic" data-lang="ar">تم استلام طلبك بنجاح</h3>
+                        <h3 class="text-lg sm:text-xl font-light text-gold font-english" data-lang="en">Request Successfully Received</h3>
+                        <p class="text-xs sm:text-sm text-taupe/70 leading-relaxed max-w-sm mx-auto font-arabic" data-lang="ar">سيتواصل معك أحد مستشاري AKITU خلال 24 ساعة لبدء التخطيط لمناسبتك الفاخرة.</p>
+                        <p class="text-xs sm:text-sm text-taupe/70 leading-relaxed max-w-sm mx-auto font-english" data-lang="en">An AKITU luxury strategist will contact you within 24 hours to begin crafting your dream event.</p>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 flex flex-col items-center justify-center text-center py-8 sm:py-12 lg:border-l lg:border-gold/20 lg:pl-8 sm:lg:pl-12 relative z-10">
+                    <div class="relative w-40 h-40 sm:w-56 sm:h-56 flex items-center justify-center">
+                        <div class="absolute inset-0 rounded-full border border-gold/10 pointer-events-none"></div>
+                        <!-- Blueprint SVG -->
+                        <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-50" viewBox="0 0 100 100" id="blueprint-svg">
+                            <path d="M50 10 L90 50 L50 90 L10 50 Z" stroke="#a87b3f" stroke-width="0.3" fill="none" class="blueprint-path" />
+                            <path d="M50 5 L50 95 M5 50 L95 50" stroke="#a87b3f" stroke-width="0.3" fill="none" class="blueprint-path" />
+                            <circle cx="50" cy="50" r="35" stroke="#a87b3f" stroke-width="0.3" fill="none" class="blueprint-path" stroke-dasharray="4 2" />
+                            <rect x="25" y="25" width="50" height="50" stroke="#a87b3f" stroke-width="0.3" fill="none" class="blueprint-path" />
+                            <circle cx="50" cy="50" r="20" stroke="#e0624c" stroke-width="0.4" fill="none" class="blueprint-path" />
+                        </svg>
+                        <!-- Existing Ring -->
+                        <svg class="absolute w-full h-full text-gold pointer-events-none" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="46" stroke="currentColor" stroke-width="1.2" stroke-dasharray="289" stroke-dashoffset="289" id="wizard-ring" fill="none" class="transition-all duration-700 ease-out"/>
+                        </svg>
+                        <img src="https://res.cloudinary.com/kmoscyfg/image/upload/v1783721095/key1_ems25j.webp" alt="Portal Key" class="w-14 h-14 sm:w-20 sm:h-20 object-contain transition-all duration-500 drop-shadow-md z-10" id="wizard-portal-key">
+                    </div>
+                    <div class="mt-4 sm:mt-6 space-y-2">
+                        <h4 class="text-[11px] sm:text-sm font-semibold text-gold uppercase tracking-widest font-english">Portal Construction</h4>
+                        <p class="text-[10px] sm:text-[11px] text-taupe/70 font-arabic" data-lang="ar" id="wiz-progress-text">ابدأ رحلتك في اختيار الخدمات</p>
+                        <p class="text-[10px] sm:text-[11px] text-taupe/70 font-english" data-lang="en" id="wiz-progress-text-en">Toggle nodes to fill visual lock status</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="suppliers" class="pt-20 pb-10 sm:pt-32 sm:pb-16 px-4 sm:px-6 bg-whitePink relative border-b border-gold/10 section-padding">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col items-center text-center mb-10 sm:mb-16 space-y-3 sm:space-y-4 reveal-up">
+                <span class="text-xs sm:text-sm font-semibold tracking-widest text-gold uppercase">07 / THE CERTIFIED REGISTRY</span>
+                <h2 class="section-title text-2xl sm:text-3xl md:text-5xl font-light text-gold font-arabic" data-lang="ar">قائمة النخبة للعلامات الشريكة</h2>
+                <h2 class="section-title text-2xl sm:text-3xl md:text-5xl font-light text-gold font-english" data-lang="en">Elite Supplier Directory</h2>
+                <p class="text-xs sm:text-sm text-taupe/60" data-lang="ar">أسماء وعلامات تجارية معتمدة تخضع للإشراف والمسؤولية الكاملة لأكيتو</p>
+                <p class="text-xs sm:text-sm text-taupe/60" data-lang="en">Verified partners subject to complete operational oversight by AKITU</p>
+            </div>
+            <div class="overflow-hidden w-full relative border-t border-b border-gold/10 marquee-wrapper" style="-webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);">
+                <div id="suppliers-track" class="flex flex-nowrap w-max h-full infinite-marquee">
+                    <div class="supplier-item tilt-card w-[85vw] md:w-[33.333vw] max-w-[340px] shrink-0 group p-6 sm:p-10 lg:border-r border-gold/10 hover:bg-peach/10 transition-all duration-500 flex flex-col justify-between min-h-[200px] sm:min-h-[240px] ripple-container touch-active" data-tilt>
+                        <div class="tilt-shine"></div>
+                        <div class="flex justify-between items-center relative z-10">
+                            <span class="text-[8px] sm:text-[9px] text-gold uppercase tracking-widest font-english">BLANK</span>
+                            <div class="w-1.5 h-1.5 rounded-full bg-gold/40"></div>
+                        </div>
+                        <h4 class="text-xl sm:text-2xl font-light tracking-wide text-taupe group-hover:text-gold transition-colors font-english my-3 sm:my-4 relative z-10">Baghdad First Event</h4>
+                        <span class="text-[9px] sm:text-[10px] text-taupe/50 uppercase tracking-widest relative z-10">SOON</span>
+                    </div>
+                    <div class="supplier-item tilt-card w-[85vw] md:w-[33.333vw] max-w-[340px] shrink-0 group p-6 sm:p-10 lg:border-r border-gold/10 hover:bg-peach/10 transition-all duration-500 flex flex-col justify-between min-h-[200px] sm:min-h-[240px] ripple-container touch-active" data-tilt>
+                        <div class="tilt-shine"></div>
+                        <div class="flex justify-between items-center relative z-10">
+                            <span class="text-[8px] sm:text-[9px] text-gold uppercase tracking-widest font-english">BLANK</span>
+                            <div class="w-1.5 h-1.5 rounded-full bg-gold/40"></div>
+                        </div>
+                        <h4 class="text-xl sm:text-2xl font-light tracking-wide text-taupe group-hover:text-gold transition-colors font-english my-3 sm:my-4 relative z-10">Baghdad Second Event</h4>
+                        <span class="text-[9px] sm:text-[10px] text-taupe/50 uppercase tracking-widest font-english relative z-10">SOON</span>
+                    </div>
+                    <div class="supplier-item tilt-card w-[85vw] md:w-[33.333vw] max-w-[340px] shrink-0 group p-6 sm:p-10 lg:border-r border-gold/10 hover:bg-peach/10 transition-all duration-500 flex flex-col justify-between min-h-[200px] sm:min-h-[240px] ripple-container touch-active" data-tilt>
+                        <div class="tilt-shine"></div>
+                        <div class="flex justify-between items-center relative z-10">
+                            <span class="text-[8px] sm:text-[9px] text-gold uppercase tracking-widest font-english">BLANK</span>
+                            <div class="w-1.5 h-1.5 rounded-full bg-gold/40"></div>
+                        </div>
+                        <h4 class="text-xl sm:text-2xl font-light tracking-wide text-taupe group-hover:text-gold transition-colors font-english my-3 sm:my-4 relative z-10">Baghdad Third Event</h4>
+                        <span class="text-[9px] sm:text-[10px] text-taupe/50 uppercase tracking-widest relative z-10">SOON</span>
+                    </div>
+                    <div class="supplier-item tilt-card w-[85vw] md:w-[33.333vw] max-w-[340px] shrink-0 group p-6 sm:p-10 lg:border-r border-gold/10 hover:bg-peach/10 transition-all duration-500 flex flex-col justify-between min-h-[200px] sm:min-h-[240px] ripple-container touch-active" data-tilt>
+                        <div class="tilt-shine"></div>
+                        <div class="flex justify-between items-center relative z-10">
+                            <span class="text-[8px] sm:text-[9px] text-gold uppercase tracking-widest font-english">BLANK</span>
+                            <div class="w-1.5 h-1.5 rounded-full bg-gold/40"></div>
+                        </div>
+                        <h4 class="text-xl sm:text-2xl font-light tracking-wide text-taupe group-hover:text-gold transition-colors font-english my-3 sm:my-4 relative z-10">Baghdad Fourth Event</h4>
+                        <span class="text-[9px] sm:text-[10px] text-taupe/50 uppercase tracking-widest relative z-10">SOON</span>
+                    </div>
+                    <div class="supplier-item tilt-card w-[85vw] md:w-[33.333vw] max-w-[340px] shrink-0 group p-6 sm:p-10 lg:border-r border-gold/10 hover:bg-peach/10 transition-all duration-500 flex flex-col justify-between min-h-[200px] sm:min-h-[240px] ripple-container touch-active" data-tilt>
+                        <div class="tilt-shine"></div>
+                        <div class="flex justify-between items-center relative z-10">
+                            <span class="text-[8px] sm:text-[9px] text-gold uppercase tracking-widest font-english">BLANK</span>
+                            <div class="w-1.5 h-1.5 rounded-full bg-gold/40"></div>
+                        </div>
+                        <h4 class="text-xl sm:text-2xl font-light tracking-wide text-taupe group-hover:text-gold transition-colors font-english my-3 sm:my-4 relative z-10">Baghdad Fifth Event</h4>
+                        <span class="text-[9px] sm:text-[10px] text-taupe/50 uppercase tracking-widest relative z-10">SOON</span>
+                    </div>
+                    <div class="supplier-item tilt-card w-[85vw] md:w-[33.333vw] max-w-[340px] shrink-0 group p-6 sm:p-10 border-gold/10 hover:bg-peach/10 transition-all duration-500 flex flex-col justify-between min-h-[200px] sm:min-h-[240px] ripple-container touch-active" data-tilt>
+                        <div class="tilt-shine"></div>
+                        <div class="flex justify-between items-center relative z-10">
+                            <span class="text-[8px] sm:text-[9px] text-gold uppercase tracking-widest font-english">BLANK</span>
+                            <div class="w-1.5 h-1.5 rounded-full bg-gold/40"></div>
+                        </div>
+                        <h4 class="text-xl sm:text-2xl font-light tracking-wide text-taupe group-hover:text-gold transition-colors font-english my-3 sm:my-4 relative z-10">Baghdad Sixth Event</h4>
+                        <span class="text-[9px] sm:text-[10px] text-taupe/50 uppercase tracking-widest relative z-10">SOON</span>
+                    </div>
+                    <!-- Duplicate Set for Seamless Loop -->
+                    <div class="supplier-item tilt-card w-[85vw] md:w-[33.333vw] max-w-[340px] shrink-0 group p-6 sm:p-10 lg:border-r border-gold/10 hover:bg-peach/10 transition-all duration-500 flex flex-col justify-between min-h-[200px] sm:min-h-[240px] ripple-container touch-active" data-tilt>
+                        <div class="tilt-shine"></div>
+                        <div class="flex justify-between items-center relative z-10">
+                            <span class="text-[8px] sm:text-[9px] text-gold uppercase tracking-widest font-english">BLANK</span>
+                            <div class="w-1.5 h-1.5 rounded-full bg-gold/40"></div>
+                        </div>
+                        <h4 class="text-xl sm:text-2xl font-light tracking-wide text-taupe group-hover:text-gold transition-colors font-english my-3 sm:my-4 relative z-10">Baghdad First Event</h4>
+                        <span class="text-[9px] sm:text-[10px] text-taupe/50 uppercase tracking-widest relative z-10">SOON</span>
+                    </div>
+                    <div class="supplier-item tilt-card w-[85vw] md:w-[33.333vw] max-w-[340px] shrink-0 group p-6 sm:p-10 lg:border-r border-gold/10 hover:bg-peach/10 transition-all duration-500 flex flex-col justify-between min-h-[200px] sm:min-h-[240px] ripple-container touch-active" data-tilt>
+                        <div class="tilt-shine"></div>
+                        <div class="flex justify-between items-center relative z-10">
+                            <span class="text-[8px] sm:text-[9px] text-gold uppercase tracking-widest font-english">BLANK</span>
+                            <div class="w-1.5 h-1.5 rounded-full bg-gold/40"></div>
+                        </div>
+                        <h4 class="text-xl sm:text-2xl font-light tracking-wide text-taupe group-hover:text-gold transition-colors font-english my-3 sm:my-4 relative z-10">Baghdad Second Event</h4>
+                        <span class="text-[9px] sm:text-[10px] text-taupe/50 uppercase tracking-widest font-english relative z-10">SOON</span>
+                    </div>
+                    <div class="supplier-item tilt-card w-[85vw] md:w-[33.333vw] max-w-[340px] shrink-0 group p-6 sm:p-10 lg:border-r border-gold/10 hover:bg-peach/10 transition-all duration-500 flex flex-col justify-between min-h-[200px] sm:min-h-[240px] ripple-container touch-active" data-tilt>
+                        <div class="tilt-shine"></div>
+                        <div class="flex justify-between items-center relative z-10">
+                            <span class="text-[8px] sm:text-[9px] text-gold uppercase tracking-widest font-english">BLANK</span>
+                            <div class="w-1.5 h-1.5 rounded-full bg-gold/40"></div>
+                        </div>
+                        <h4 class="text-xl sm:text-2xl font-light tracking-wide text-taupe group-hover:text-gold transition-colors font-english my-3 sm:my-4 relative z-10">Baghdad Third Event</h4>
+                        <span class="text-[9px] sm:text-[10px] text-taupe/50 uppercase tracking-widest relative z-10">SOON</span>
+                    </div>
+                    <div class="supplier-item tilt-card w-[85vw] md:w-[33.333vw] max-w-[340px] shrink-0 group p-6 sm:p-10 lg:border-r border-gold/10 hover:bg-peach/10 transition-all duration-500 flex flex-col justify-between min-h-[200px] sm:min-h-[240px] ripple-container touch-active" data-tilt>
+                        <div class="tilt-shine"></div>
+                        <div class="flex justify-between items-center relative z-10">
+                            <span class="text-[8px] sm:text-[9px] text-gold uppercase tracking-widest font-english">BLANK</span>
+                            <div class="w-1.5 h-1.5 rounded-full bg-gold/40"></div>
+                        </div>
+                        <h4 class="text-xl sm:text-2xl font-light tracking-wide text-taupe group-hover:text-gold transition-colors font-english my-3 sm:my-4 relative z-10">Baghdad Fourth Event</h4>
+                        <span class="text-[9px] sm:text-[10px] text-taupe/50 uppercase tracking-widest relative z-10">SOON</span>
+                    </div>
+                    <div class="supplier-item tilt-card w-[85vw] md:w-[33.333vw] max-w-[340px] shrink-0 group p-6 sm:p-10 lg:border-r border-gold/10 hover:bg-peach/10 transition-all duration-500 flex flex-col justify-between min-h-[200px] sm:min-h-[240px] ripple-container touch-active" data-tilt>
+                        <div class="tilt-shine"></div>
+                        <div class="flex justify-between items-center relative z-10">
+                            <span class="text-[8px] sm:text-[9px] text-gold uppercase tracking-widest font-english">BLANK</span>
+                            <div class="w-1.5 h-1.5 rounded-full bg-gold/40"></div>
+                        </div>
+                        <h4 class="text-xl sm:text-2xl font-light tracking-wide text-taupe group-hover:text-gold transition-colors font-english my-3 sm:my-4 relative z-10">Baghdad Fifth Event</h4>
+                        <span class="text-[9px] sm:text-[10px] text-taupe/50 uppercase tracking-widest relative z-10">SOON</span>
+                    </div>
+                    <div class="supplier-item tilt-card w-[85vw] md:w-[33.333vw] max-w-[340px] shrink-0 group p-6 sm:p-10 border-gold/10 hover:bg-peach/10 transition-all duration-500 flex flex-col justify-between min-h-[200px] sm:min-h-[240px] ripple-container touch-active" data-tilt>
+                        <div class="tilt-shine"></div>
+                        <div class="flex justify-between items-center relative z-10">
+                            <span class="text-[8px] sm:text-[9px] text-gold uppercase tracking-widest font-english">BLANK</span>
+                            <div class="w-1.5 h-1.5 rounded-full bg-gold/40"></div>
+                        </div>
+                        <h4 class="text-xl sm:text-2xl font-light tracking-wide text-taupe group-hover:text-gold transition-colors font-english my-3 sm:my-4 relative z-10">Baghdad Sixth Event</h4>
+                        <span class="text-[9px] sm:text-[10px] text-taupe/50 uppercase tracking-widest relative z-10">SOON</span>
+                    </div>
+                </div>
+        </div>
+    </section>
+    
+    <!-- ========================================================== -->
+    <!-- NEW INFINITE AKITU MARQUEE                                 -->
+    <!-- ========================================================== -->
+    <div class="bg-peach w-full relative z-10">
+        <section class="bg-[#0d0a0b] py-8 overflow-hidden w-full" style="-webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
+        <div class="flex whitespace-nowrap infinite-marquee-text w-max">
+            <div class="flex shrink-0">
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+            </div>
+            <!-- Duplicate for Seamless Loop -->
+            <div class="flex shrink-0">
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+                <h2 class="text-3xl sm:text-4xl text-peach/80 font-light uppercase tracking-widest font-english px-6">
+                    AKITU &mdash; أكيتو &mdash;
+                </h2>
+            </div>
+        </div>
+    </section>
+    </div>
+    </main>
+
+    <!-- ========================================================== -->
+    <!-- FOOTER REVEAL SECTION                                        -->
+    <!-- ========================================================== -->
+    <footer id="footer-section" class="bg-[#0d0a0b] text-whitePink pt-24 sm:pt-32 pb-10 sm:pb-16 px-4 sm:px-6 relative overflow-hidden group">
+        <div id="footer-spotlight" class="absolute inset-0 pointer-events-none z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        <div class="absolute bottom-0 right-0 left-0 text-center select-none pointer-events-none opacity-[0.015] z-0 flex justify-center items-end overflow-hidden h-full">
+            <h2 class="text-[12vw] sm:text-[16vw] font-light tracking-widest font-english leading-[0.8] text-whitePink m-0 p-0">AKITU EVENT</h2>
+        </div>
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 sm:gap-16 relative z-10">
+            <div class="md:col-span-4 flex flex-col space-y-6 sm:space-y-8 reveal-up">
+                <span class="text-2xl sm:text-3xl font-light tracking-widest text-gold font-english">AKITU EVENT</span>
+                <div class="flex flex-col space-y-2 text-xs sm:text-sm text-peach/50 tracking-widest uppercase font-english">
+                    <span>Private Projects</span>
+                    <span>Baghdad, Iraq</span>
+                </div>
+                <div class="flex gap-4 text-gold mt-6 justify-start">
+                    <a href="https://www.instagram.com/akitu_iq?igsh=MmhqaWVmaDZjZ3Rp" target="_blank" rel="noopener noreferrer" aria-label="Follow" class="group w-11 h-11 rounded-full border border-gold/20 hover:border-gold/60 hover:bg-gold/5 flex items-center justify-center transition-all duration-500 magnetic-btn ripple-container touch-active relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-gold group-hover:text-peach transition-colors"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        <span class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 bg-[#0d0a0b] border border-gold/20 text-gold text-[10px] px-2 py-1 rounded pointer-events-none whitespace-nowrap z-20">
+                            <span data-lang="en" class="font-english tracking-widest uppercase">Follow</span>
+                            <span data-lang="ar" class="font-arabic">تابع</span>
+                        </span>
+                    </a>
+                    <a href="https://www.facebook.com/AQITU.iq/" target="_blank" rel="noopener noreferrer" aria-label="Follow" class="group w-11 h-11 rounded-full border border-gold/20 hover:border-gold/60 hover:bg-gold/5 flex items-center justify-center transition-all duration-500 magnetic-btn ripple-container touch-active relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-gold group-hover:text-peach transition-colors"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        <span class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 bg-[#0d0a0b] border border-gold/20 text-gold text-[10px] px-2 py-1 rounded pointer-events-none whitespace-nowrap z-20">
+                            <span data-lang="en" class="font-english tracking-widest uppercase">Follow</span>
+                            <span data-lang="ar" class="font-arabic">تابع</span>
+                        </span>
+                    </a>
+                    <a href="mailto:info@akituevent.com" aria-label="Contact" class="group w-11 h-11 rounded-full border border-gold/20 hover:border-gold/60 hover:bg-gold/5 flex items-center justify-center transition-all duration-500 magnetic-btn ripple-container touch-active relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-gold group-hover:text-peach transition-colors"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </a>
+                    <a href="https://wa.me/9647742777077?text=شكراً%20لأختياركم%20أكيتو%20%0Aنحن%20هنا%20في%20خدمتكم%20%0Aكيف%20يمكننا%20المساعدة%20؟" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="group w-11 h-11 rounded-full border border-gold/20 hover:border-gold/60 hover:bg-gold/5 flex items-center justify-center transition-all duration-500 magnetic-btn ripple-container touch-active relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-gold group-hover:text-peach transition-colors"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </a>
+                </div>
+
+            </div>
+            <div class="md:col-span-4 flex flex-col justify-center space-y-4 sm:space-y-6 md:px-8 sm:md:px-12 reveal-up">
+                <div>
+                    <h5 class="text-[9px] sm:text-[10px] font-semibold text-gold tracking-widest uppercase mb-2" data-lang="ar">بوابة المحاذاة الزمنية</h5>
+                    <h5 class="text-[9px] sm:text-[10px] font-semibold text-gold tracking-widest uppercase mb-2" data-lang="en">Baghdad Chronological Time</h5>
+                    <div class="text-4xl sm:text-5xl font-extralight tracking-widest text-peach font-english my-4" id="footer-clock">00:00:00</div>
+                    <span class="text-[8px] sm:text-[9px] text-peach/30 uppercase tracking-widest font-english">UTC +3 ALIGNMENT</span>
+                </div>
+            </div>
+            <div class="md:col-span-4 flex flex-col justify-center space-y-6 reveal-up">
+                <h5 class="text-[9px] sm:text-[10px] font-semibold text-gold tracking-widest uppercase" data-lang="ar">النشرات الاستشارية الخاصة</h5>
+                <h5 class="text-[9px] sm:text-[10px] font-semibold text-gold tracking-widest uppercase" data-lang="en">Advisory Newsletter</h5>
+                <div id="newsletter-form-container" class="relative w-full">
+                    <form id="footer-newsletter" onsubmit="handleNewsletterSubmit(event)" class="w-full">
+                        <div class="flex items-end border-b border-gold/20 hover:border-gold/50 transition-colors pb-2">
+                            <input type="email" id="newsletter-email" required placeholder="EMAIL ADDRESS" class="w-full bg-transparent border-none py-1 text-xs font-light tracking-wider focus:outline-none text-peach font-english px-0 placeholder:text-peach/20">
+                            <button type="submit" class="px-2 text-gold hover:text-peach transition-colors magnetic-btn">
+                                <i data-lucide="arrow-left" class="w-4 h-4 rtl:block hidden"></i>
+                                <i data-lucide="arrow-right" class="w-4 h-4 ltr:block hidden"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <div id="newsletter-success" class="absolute inset-0 flex items-center text-xs sm:text-sm text-gold font-light tracking-widest opacity-0 pointer-events-none translate-y-4">
+                        <p data-lang="ar">تم الإرسال بنجاح. ترحيب يليق بك.</p>
+                        <p data-lang="en">SUBMISSION GRANTED. WELCOME.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto border-t border-gold/10 mt-16 sm:mt-24 pt-6 flex flex-col md:flex-row justify-between items-center text-[8px] sm:text-[9px] text-peach/30 tracking-widest uppercase relative z-10 gap-6 md:gap-0">
+            <div class="flex flex-col md:flex-row items-center md:items-start text-center md:text-start order-3 md:order-1">
+                <span data-lang="ar">© شركة أكيتو لتنظيم المناسبات. جميع الحقوق الفكرية محفوظة.</span>
+                <span data-lang="en">© AKITU EVENTS. INTELLECTUAL PROPERTY REGISTERED.</span>
+            </div>
+
+
+
+            <button onclick="smoothScrollTo('body')" class="magnetic-btn flex items-center space-x-2 space-x-reverse hover:text-gold transition-colors touch-active order-1 md:order-3">
+                <span data-lang="ar">العودة للأعلى</span>
+                <span data-lang="en">Back to Top</span>
+                <i data-lucide="arrow-up" class="w-3.5 h-3.5 stroke-[1]"></i>
+            </button>
+        </div>
+    </footer>
+
+    <!-- ========================================================== -->
+    <!-- BOTTOM CONTROL BAR                                           -->
+    <!-- ========================================================== -->
+    <div id="bottom-control-bar-wrapper" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[9500] pointer-events-none">
+        <div id="bottom-control-bar" class="flex items-center justify-center gap-5 sm:gap-6 frosted-glass border border-gold/15 px-5 sm:px-8 py-2.5 rounded-full shadow-xl shadow-gold/5 touch-active pointer-events-auto reveal-up">
+        <button onclick="toggleLanguage()" class="group flex items-center justify-center gap-2 text-taupe hover:text-gold transition-colors text-xs font-medium tracking-widest magnetic-btn relative">
+            <span class="w-1.5 h-1.5 rounded-full bg-gold/40 group-hover:bg-gold transition-colors"></span>
+            <span data-lang="ar" class="font-english tracking-[0.2em] pt-[1px]">EN</span>
+            <span data-lang="en" class="font-arabic text-[11px]">العربية</span>
+        </button>
+        <div class="w-px h-3 bg-gold/20"></div>
+        <button id="booking-btn" onclick="smoothScrollTo('#journey')" class="flex items-center justify-center text-[9px] sm:text-[10px] text-taupe hover:text-gold transition-colors uppercase tracking-widest magnetic-btn whitespace-nowrap">
+            <span data-lang="ar" class="font-arabic">الحجز</span>
+            <span data-lang="en" class="font-english">Booking</span>
+        </button>
+        <div class="w-px h-3 bg-gold/20"></div>
+        <button id="services-btn" onclick="smoothScrollTo('#infrastructure-section')" class="flex items-center justify-center text-[9px] sm:text-[10px] text-taupe hover:text-gold transition-colors uppercase tracking-widest magnetic-btn whitespace-nowrap">
+            <span data-lang="ar" class="font-arabic">الخدمات</span>
+            <span data-lang="en" class="font-english">Services</span>
+        </button>
+    </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- LUXURY POLICY MODAL                                          -->
+    <!-- ========================================================== -->
+    <div id="policy-modal" class="fixed inset-0 z-[10001] opacity-0 pointer-events-none flex justify-center items-center p-4 sm:p-8">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-taupe/80 backdrop-blur-md" onclick="closePolicyModal()"></div>
+        
+        <!-- Modal Content -->
+        <div class="relative w-full max-w-4xl frosted-glass bg-whitePink/75 border border-gold/25 rounded-2xl shadow-2xl flex flex-col overflow-hidden max-h-[90vh]">
+            
+            <!-- Header -->
+            <div class="flex items-center justify-between p-6 border-b border-gold/25 bg-transparent">
+                <h3 id="policy-modal-title" class="text-xl sm:text-2xl font-light tracking-widest text-gold uppercase text-soft-shadow"></h3>
+                <button onclick="closePolicyModal()" class="w-10 h-10 rounded-full bg-taupe/5 hover:bg-gold/10 flex items-center justify-center transition-colors text-taupe/70 hover:text-taupe magnetic-btn">
+                    <i data-lucide="x" class="w-5 h-5 stroke-[1.5]"></i>
+                </button>
+            </div>
+            
+            <!-- Body -->
+            <div id="policy-modal-body" class="p-6 sm:p-10 overflow-y-auto text-taupe space-y-6 text-sm sm:text-base font-light leading-relaxed custom-scrollbar text-soft-shadow">
+            </div>
+            
+        </div>
+    </div>
+
+        <div class="custom-cursor-wrapper" id="cursorWrapper" style="pointer-events:none !important; position:fixed; z-index:9999999; top:0; left:0;">
+        <div class="custom-cursor" id="cursorOuter" style="pointer-events:none !important;"></div>
+        <div class="custom-cursor-text opacity-0 scale-50 transition-all duration-300 absolute" id="cursorText" style="top:0; left:0; transform: translate(-50%, -50%); pointer-events:none !important;">
+            <svg viewBox="0 0 100 100" width="100" height="100" class="animate-spin-slow origin-center">
+                <path d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" id="circle-path" fill="none"/>
+                <text font-size="12.5" font-weight="600" letter-spacing="3" fill="#0d0a0b" class="font-english uppercase">
+                    <textPath href="#circle-path">DRAG / VIEW &bull; DRAG / VIEW &bull; </textPath>
+                </text>
+            </svg>
+        </div>
+    </div>
+    <div class="custom-cursor-dot" id="cursorDot" style="z-index:9999999; pointer-events:none !important;"></div>
+<script src="main.js"></script>
+</body>
+</html>
