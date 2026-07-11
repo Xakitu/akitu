@@ -14,7 +14,7 @@
             --candle-w-mobile: 5px;
         }
         img {
-            -webkit-touch-callout: none; /* Disable long-press context menu on iOS */
+            -webkit-touch-callout: none;
             -webkit-user-select: none;
             user-select: none;
             -webkit-touch-callout: none;
@@ -61,10 +61,10 @@
         @media (max-width: 768px) {
             body { cursor: auto; }
         }
-        /* Custom Luxury Scrollbar for Modal */
+
         .custom-scrollbar::-webkit-scrollbar {
             width: 4px;
-            display: block; /* Override body display:none */
+            display: block; 
         }
         .custom-scrollbar::-webkit-scrollbar-track {
             background: transparent;
@@ -665,13 +665,8 @@
             animation: arrow-glow-move-ltr 2s ease-in-out infinite;
         }
 
-        /* =========================================
-           ADVANCED FEATURE STYLES
-           ========================================= */
-           
-        /* Footer Reveal */
-        
-        /* Blueprint SVG */
+          /* YAQDHAN FOR EVER YFM!!! */
+
         .blueprint-path {
             stroke-dasharray: 2000;
             stroke-dashoffset: 2000;
@@ -682,19 +677,19 @@
             opacity: 1;
         }
         
-        /* SplitType Text Utility */
+        
         .word, .char {
             display: inline-block;
         }
 
-        /* Footer Spotlight */
+      
         #footer-spotlight {
             background: radial-gradient(circle 500px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(168, 123, 63, 0.12), transparent 80%);
             mix-blend-mode: screen;
         }
 
 
-        /* Morphing & Gooey Cursor */
+        
         .animate-spin-slow {
             animation: spin 8s linear infinite;
         }
@@ -704,14 +699,14 @@
         }
         #cursorWrapper {
             filter: url(#goo);
-            mix-blend-mode: normal; /* Changes to difference in JS */
+            mix-blend-mode: normal; 
             transition: mix-blend-mode 0.3s;
             z-index: 9999999 !important;
             pointer-events: none !important;
         }
-        /* Duplicate cursor classes removed in favor of earlier definition */
 
-        /* Infinite Marquee */
+
+     
         .infinite-marquee {
             animation: infiniteScroll 30s linear infinite;
             will-change: transform;
@@ -734,7 +729,7 @@
             100% { transform: translateX(50%); }
         }
 
-        /* Golden Pulse */
+      
         .booking-pulse {
             animation: goldenPulse 2s infinite;
         }
@@ -753,7 +748,7 @@
             }
         }
 
-        /* Text Marquee */
+        
         .infinite-marquee-text {
             animation: marqueeTextScroll 60s linear infinite;
             will-change: transform;
