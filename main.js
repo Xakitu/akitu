@@ -132,7 +132,7 @@
                         targetVy += (dy / dist) * force * 2;
                     }
                     
-                    // Smooth physics application
+       
                     this.x += targetVx;
                     this.y += targetVy;
                     
@@ -243,7 +243,7 @@
             function setCursorState(type, rect = null) {
                 switch (type) {
                     case 'slider':
-                        // Morphing logic
+                   
                         cursorWrapper.style.mixBlendMode = 'difference';
                         gsap.to(cursorOuter, { scale: 3, borderColor: '#fff', backgroundColor: '#fff', duration: 0.4 });
                         gsap.to(cursorDot, { scale: 0, duration: 0.2 });
@@ -251,7 +251,7 @@
                         cursorText.classList.add('opacity-100', 'scale-100');
                         break;
                     case 'button':
-                        // Gooey snap logic
+             
                         cursorWrapper.style.mixBlendMode = 'normal';
                         if(rect) {
                             gsap.to(cursorOuter, { 
@@ -287,7 +287,7 @@
                 }
             }
 
-            // Bind to magnetic buttons
+    
             document.querySelectorAll('.magnetic-btn').forEach(btn => {
                 btn.addEventListener('mousemove', e => {
                     window.magnetTarget = btn;
@@ -380,18 +380,18 @@
             const progress = document.getElementById('language-progress');
             
             if (preloader && progress) {
-                // Animate progress bar
+          
                 progress.style.transition = 'width 2.2s ease-in-out';
                 progress.style.width = '100%';
                 
-                // Fade out after progress completes
+                
                 setTimeout(() => {
                     preloader.style.opacity = '0';
                     setTimeout(() => {
                         preloader.classList.remove('pointer-events-auto');
                         preloader.classList.add('pointer-events-none');
                         preloader.style.display = 'none';
-                        // Trigger initial reveal animations
+                
                         gsap.from('.reveal-up', {
                             y: 50, opacity: 0, duration: 1,
                             stagger: 0.15, delay: 0.1,
@@ -779,7 +779,7 @@
                 }
             });
         });
-        // Removed duplicated clock updater function updateLiveClock()
+     
         ScrollTrigger.create({
             trigger: '#services',
             start: 'top 80%',
@@ -794,7 +794,7 @@
             }
         });
 
-        // Cinematic Fade-to-Black Transitions for navigation
+
         document.querySelectorAll('a').forEach(link => {
             if (!link.hasAttribute('href')) return;
             const href = link.getAttribute('href');
@@ -813,7 +813,7 @@
             });
         });
 
-        // SplitType Micro-Typography Animation
+      
         if (typeof SplitType !== 'undefined') {
             const splitTitles = new SplitType('.section-title', { types: 'words' });
             
@@ -870,7 +870,6 @@
             });
         }
 
-        // (Horizontal pinned scroll removed for Infinite Marquee implementation)
 
 
         (function initCinematicSlider() {
@@ -933,7 +932,7 @@
                 loader.load('https://res.cloudinary.com/kmoscyfg/image/upload/v1783787572/love2_plulmu.jpg')
             ];
             
-            // Set scaling to cover
+           
             textures.forEach(tex => {
                 tex.minFilter = THREE.LinearFilter;
                 tex.magFilter = THREE.LinearFilter;
@@ -942,7 +941,7 @@
             const material = new THREE.ShaderMaterial({
                 uniforms: {
                     texture1: { value: textures[0] },
-                    texture2: { value: textures[0] }, // initially same
+                    texture2: { value: textures[0] },
                     dispFactor: { value: 0.0 },
                     uMouse: { value: new THREE.Vector2(0, 0) }
                 },
@@ -980,7 +979,7 @@
             function render() {
                 requestAnimationFrame(render);
                 if(isVisible) {
-                    // Lerp mouse for smooth parallax
+                   
                     material.uniforms.uMouse.value.lerp(mouseTarget, 0.05);
                     renderer.render(scene, camera);
                 }
@@ -1051,7 +1050,7 @@
         })();
 
         // ====================================================
-        // LUXURY POLICY MODAL & DYNAMIC COPY
+        // YAQDHAN FOR EVER YFM!!!
         // ====================================================
         const policiesData = {
             ar: {
@@ -1129,12 +1128,11 @@
                 modalBody.innerHTML = bodyHtml;
                 modalBody.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
                 
-                // Show modal
                 const modal = document.getElementById('policy-modal');
                 modal.classList.remove('pointer-events-none');
                 gsap.to(modal, { opacity: 1, duration: 0.8, ease: "power2.out" });
                 
-                // Refresh Lucide icons in case
+        
                 if(window.lucide) lucide.createIcons();
             });
         }
@@ -1151,11 +1149,7 @@
             });
         }
 
-        // ==========================================
-        // Three.js WebGL Vases & Flowers
-
-        // ==========================================
-        // Footer Reveal Logic Removed (Footer is now directly connected to main)
+    
 
         const footerSectionEl = document.getElementById('footer-section');
         if (footerSectionEl) {
@@ -1167,7 +1161,7 @@
                 footerSectionEl.style.setProperty('--mouse-y', `${y}px`);
             });
 
-            // Fade out bottom control bar when footer enters
+       
             const bottomBar = document.getElementById('bottom-control-bar');
             if (bottomBar) {
                 ScrollTrigger.create({
@@ -1178,9 +1172,7 @@
                 });
             }
         }
-        // ==========================================
-        // PWA Service Worker Registration
-        // ==========================================
+       
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('sw.js').then(registration => {
@@ -1190,9 +1182,7 @@
                 });
             });
         }
-        // ==========================================
-        // Floral SVGs Parallax Logic
-        // ==========================================
+     
         const parallaxFlowers = document.querySelectorAll('.parallax-flower');
         if (parallaxFlowers.length > 0) {
             const xSetters = [];
