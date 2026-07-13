@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الصفحة غير موجودة | akitu</title>
+    <link rel="icon" type="image/jpeg" href="https://res.cloudinary.com/kmoscyfg/image/upload/v1783948128/favicon_yjo6k6.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark: #0a0a0a;
+            --gold: #d4af37;
+            --taupe: #8e8d8a;
+        }
+        body {
+            background-color: var(--dark);
+            color: var(--taupe);
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+        }
+        h1 {
+            font-size: 8rem;
+            color: var(--gold);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 300;
+            margin: 0;
+            line-height: 1;
+            letter-spacing: 0.1em;
+            text-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin: 1rem 0;
+            letter-spacing: 0.05em;
+        }
+        p {
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+        a.btn {
+            display: inline-block;
+            padding: 1rem 3rem;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+            background: rgba(212, 175, 55, 0.05);
+        }
+        a.btn:hover {
+            background: var(--gold);
+            color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.15);
+        }
+    </style>
+</head>
+<body>
+    <h1>404</h1>
+    <h2>عذراً، الصفحة غير موجودة</h2>
+    <p>يبدو أنك قد وصلت إلى نهاية الطريق. الرابط الذي تحاول الوصول إليه غير موجود أو تم نقله.</p>
+    <a href="index.html" class="btn" onclick="if(window.location.protocol !== 'file:') { window.location.href = '/'; return false; }">العودة للبداية</a>
+</body>
+</html>
