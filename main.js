@@ -928,9 +928,9 @@
 
             const loader = new THREE.TextureLoader();
             const textures = [
-                loader.load('https://res.cloudinary.com/kmoscyfg/image/upload/v1790088158/lov2_dwqyip.jpg'),
-                loader.load('https://res.cloudinary.com/kmoscyfg/image/upload/v1790088167/love1_uzdqeu.jpg'),
-                loader.load('https://res.cloudinary.com/kmoscyfg/image/upload/v1790088160/lov3_ryxahq.jpg')
+                loader.load('https://res.cloudinary.com/kmoscyfg/image/upload/v1790093499/lo1_ef4h3n.jpg'),
+                loader.load('https://res.cloudinary.com/kmoscyfg/image/upload/v1790093516/lo3_ols2im.jpg'),
+                loader.load('https://res.cloudinary.com/kmoscyfg/image/upload/v1790093522/lo2_yg8aeb.jpg')
             ];
             
             
