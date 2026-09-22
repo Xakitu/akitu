@@ -1,10 +1,8 @@
 
 
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
-        }
+        lucide.createIcons();
         document.addEventListener('touchmove', function (event) {
-            if ((event.scale !== undefined && event.scale !== 1) || event.touches.length > 1) {
+            if (event.scale !== 1 || event.touches.length > 1) {
                 event.preventDefault();
             }
         }, { passive: false });
@@ -34,14 +32,12 @@
             const preloader = document.getElementById('language-preloader');
             const progress = document.getElementById('language-progress');
             if (preloader && progress) {
-                preloader.style.display = 'flex';
                 preloader.classList.remove('pointer-events-none');
-                preloader.classList.add('pointer-events-auto');
-                setTimeout(() => { preloader.style.opacity = '1'; }, 20);
+                preloader.style.opacity = '1';
                 
                 progress.style.transition = 'none';
                 progress.style.width = '0%';
-                void progress.offsetWidth; 
+                void progress.offsetWidth; // Force reflow
                 
                 setTimeout(() => {
                     progress.style.transition = 'width 2.2s ease-in-out';
@@ -50,12 +46,8 @@
                 setTimeout(() => {
                     if (typeof onCompleteCallback === 'function') onCompleteCallback();
                     preloader.style.opacity = '0';
-                    setTimeout(() => {
-                        preloader.classList.remove('pointer-events-auto');
-                        preloader.classList.add('pointer-events-none');
-                        preloader.style.display = 'none';
-                        isTransitioning = false;
-                    }, 1000);
+                    preloader.classList.add('pointer-events-none');
+                    setTimeout(() => { isTransitioning = false; }, 500);
                 }, 2500);
             } else {
                 if (typeof onCompleteCallback === 'function') onCompleteCallback();
@@ -63,7 +55,15 @@
             }
         }
 
-        
+        function toggleLanguage() {
+            runScreenTransition(() => {
+                currentLang = currentLang === 'ar' ? 'en' : 'ar';
+                document.documentElement.lang = currentLang;
+                document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+                document.title = currentLang === 'ar' ? 'اكيتو | akitu' : 'akitu | اكيتو';
+                updateWizardVisuals();
+            });
+        }
         document.body.addEventListener('click', function(e) {
             const clickable = e.target.closest('button, a, .magnetic-btn, .touch-active');
             if (clickable) {
@@ -82,18 +82,11 @@
             }
         }, { capture: true });
         gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-        window.globalMouseX = window.innerWidth / 2;
-        window.globalMouseY = window.innerHeight / 2;
-        window.addEventListener('mousemove', e => {
-            window.globalMouseX = e.clientX;
-            window.globalMouseY = e.clientY;
-        });
-
         const canvas = document.getElementById('ambient-canvas');
         if (canvas) {
             const ctx = canvas.getContext('2d');
             let particles = [];
-            const maxParticles = 40; 
+            const maxParticles = 30; 
             function resizeCanvas() {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
@@ -107,36 +100,18 @@
                 reset(initial = false) {
                     this.x = Math.random() * canvas.width;
                     this.y = initial ? Math.random() * canvas.height : canvas.height + 10;
-                    this.size = Math.random() * 2.5 + 0.5; 
-                    this.vx = 0;
-                    this.vy = -(Math.random() * 0.5 + 0.2); 
-                    this.opacity = (Math.random() * 0.5 + 0.1) * 0.5; 
+                    this.size = Math.random() * 2 + 0.5; 
+                    this.speedY = Math.random() * 0.8 + 0.2; 
+                    this.opacity = (Math.random() * 0.4 + 0.1) * 0.5; 
                     this.angle = Math.random() * Math.PI * 2; 
                     this.driftSpeed = Math.random() * 0.02 + 0.01; 
                     this.driftAmplitude = Math.random() * 0.5 + 0.2; 
                 }
                 update() {
-                    
+                    this.y -= this.speedY;
                     this.angle += this.driftSpeed;
-                    let targetVx = Math.sin(this.angle) * this.driftAmplitude;
-                    let targetVy = this.vy;
-                    
-                    
-                    const dx = window.globalMouseX - this.x;
-                    const dy = window.globalMouseY - this.y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    
-                    if (dist < 300) { 
-                        const force = (300 - dist) / 300;
-                        targetVx += (dx / dist) * force * 2;
-                        targetVy += (dy / dist) * force * 2;
-                    }
-                    
-                    
-                    this.x += targetVx;
-                    this.y += targetVy;
-                    
-                    if (this.y < -10 || this.x < -10 || this.x > canvas.width + 10) {
+                    this.x += Math.sin(this.angle) * this.driftAmplitude;
+                    if (this.y < -10) {
                         this.reset();
                     }
                 }
@@ -165,10 +140,8 @@
             const preloader = document.getElementById('language-preloader');
             const progress = document.getElementById('language-progress');
             if (preloader && progress) {
-                preloader.style.display = 'flex';
                 preloader.classList.remove('pointer-events-none');
-                preloader.classList.add('pointer-events-auto');
-                setTimeout(() => { preloader.style.opacity = '1'; }, 20);
+                preloader.style.opacity = '1';
                 progress.style.transition = 'none';
                 progress.style.width = '0%';
                 setTimeout(() => {
@@ -182,11 +155,7 @@
                     document.title = currentLang === 'ar' ? 'اكيتو | akitu' : 'akitu | اكيتو';
                     updateWizardVisuals();
                     preloader.style.opacity = '0';
-                    setTimeout(() => {
-                        preloader.classList.remove('pointer-events-auto');
-                        preloader.classList.add('pointer-events-none');
-                        preloader.style.display = 'none';
-                    }, 1000);
+                    preloader.classList.add('pointer-events-none');
                 }, 3000);
             } else {
                 currentLang = currentLang === 'ar' ? 'en' : 'ar';
@@ -196,101 +165,41 @@
                 updateWizardVisuals();
             }
         }
-        const cursorWrapper = document.getElementById('cursorWrapper');
         const cursorOuter = document.getElementById('cursorOuter');
         const cursorDot = document.getElementById('cursorDot');
         const cursorText = document.getElementById('cursorText');
         const isMobile = window.matchMedia('(max-width: 768px)').matches;
-        if (!isMobile && cursorWrapper && cursorOuter && cursorDot) {
-            let mouseX = window.innerWidth/2, mouseY = window.innerHeight/2;
-            let cursorX = mouseX, cursorY = mouseY;
-            let magnetTarget = null;
-            window.magnetTarget = null; 
-            
-            const setWrapperX = gsap.quickSetter(cursorWrapper, "x", "px");
-            const setWrapperY = gsap.quickSetter(cursorWrapper, "y", "px");
-            const setTextX = gsap.quickSetter(cursorText, "x", "px");
-            const setTextY = gsap.quickSetter(cursorText, "y", "px");
-
+        if (!isMobile && cursorOuter && cursorDot) {
+            let mouseX = 0, mouseY = 0;
             window.addEventListener('mousemove', e => {
                 mouseX = e.clientX;
                 mouseY = e.clientY;
-                gsap.to(cursorDot, { x: mouseX, y: mouseY, duration: 0.05, ease: 'none' });
+                gsap.to(cursorOuter, { x: mouseX, y: mouseY, duration: 0.35, ease: 'power3.out' });
+                gsap.to(cursorDot, { x: mouseX, y: mouseY, duration: 0.08, ease: 'power3.out' });
+                gsap.to(cursorText, { x: mouseX, y: mouseY + 28, duration: 0.35, ease: 'power3.out' });
             });
-
-            function renderCursor() {
-                let targetX = mouseX;
-                let targetY = mouseY;
-                
-                if (window.magnetTarget) {
-                    const rect = window.magnetTarget.getBoundingClientRect();
-                    const cx = rect.left + rect.width / 2;
-                    const cy = rect.top + rect.height / 2;
-                    targetX = mouseX + (cx - mouseX) * 0.6;
-                    targetY = mouseY + (cy - mouseY) * 0.6;
-                }
-
-                cursorX += (targetX - cursorX) * 0.15;
-                cursorY += (targetY - cursorY) * 0.15;
-                
-                setWrapperX(cursorX);
-                setWrapperY(cursorY);
-                
-                requestAnimationFrame(renderCursor);
-            }
-            requestAnimationFrame(renderCursor);
-            
-            function setCursorState(type, rect = null) {
+            function setCursorState(type) {
                 switch (type) {
-                    case 'slider':
-                        
-                        cursorWrapper.style.mixBlendMode = 'difference';
-                        gsap.to(cursorOuter, { scale: 3, borderColor: '#fff', backgroundColor: '#fff', duration: 0.4 });
-                        gsap.to(cursorDot, { scale: 0, duration: 0.2 });
-                        cursorText.classList.remove('opacity-0', 'scale-50');
-                        cursorText.classList.add('opacity-100', 'scale-100');
-                        break;
                     case 'button':
-                        
-                        cursorWrapper.style.mixBlendMode = 'normal';
-                        if(rect) {
-                            gsap.to(cursorOuter, { 
-                                width: rect.width + 10, 
-                                height: rect.height + 10, 
-                                scale: 1, 
-                                borderColor: 'rgba(168,123,63,0.4)', 
-                                backgroundColor: 'rgba(168,123,63,0.15)',
-                                borderRadius: '30px', 
-                                duration: 0.3 
-                            });
-                        } else {
-                            gsap.to(cursorOuter, { scale: 0.6, width: 36, height: 36, borderRadius: '50%', borderColor: '#a87b3f', backgroundColor: 'rgba(168,123,63,0.25)', duration: 0.3 });
-                        }
+                        gsap.to(cursorOuter, { scale: 0.6, borderColor: '#a87b3f', backgroundColor: 'rgba(168,123,63,0.25)', duration: 0.3 });
                         gsap.to(cursorDot, { scale: 0, duration: 0.2 });
-                        cursorText.classList.add('opacity-0', 'scale-50');
-                        cursorText.classList.remove('opacity-100', 'scale-100');
+                        break;
+                    case 'card':
+                        gsap.to(cursorOuter, { width: 70, height: 70, borderColor: 'rgba(168,123,63,0.4)', backgroundColor: 'rgba(168,123,63,0.06)', duration: 0.35 });
+                        cursorText.textContent = 'Explore';
+                        gsap.to(cursorText, { opacity: 1, duration: 0.2 });
                         break;
                     case 'link':
-                        cursorWrapper.style.mixBlendMode = 'normal';
-                        gsap.to(cursorOuter, { scale: 1.5, width: 36, height: 36, borderRadius: '50%', borderColor: '#a87b3f', backgroundColor: 'rgba(168,123,63,0.08)', duration: 0.25 });
-                        gsap.to(cursorDot, { scale: 0, duration: 0.2 });
-                        cursorText.classList.add('opacity-0', 'scale-50');
-                        cursorText.classList.remove('opacity-100', 'scale-100');
+                        gsap.to(cursorOuter, { scale: 1.5, borderColor: '#a87b3f', backgroundColor: 'rgba(168,123,63,0.08)', duration: 0.25 });
                         break;
                     default:
-                        
-                        cursorWrapper.style.mixBlendMode = 'normal';
-                        gsap.to(cursorOuter, { scale: 1, width: 36, height: 36, borderRadius: '50%', borderColor: '#a87b3f', backgroundColor: 'transparent', duration: 0.3 });
+                        gsap.to(cursorOuter, { scale: 1, width: 36, height: 36, borderColor: '#a87b3f', backgroundColor: 'transparent', duration: 0.3 });
                         gsap.to(cursorDot, { scale: 1, duration: 0.2 });
-                        cursorText.classList.add('opacity-0', 'scale-50');
-                        cursorText.classList.remove('opacity-100', 'scale-100');
+                        gsap.to(cursorText, { opacity: 0, duration: 0.2 });
                 }
             }
-
-            
             document.querySelectorAll('.magnetic-btn').forEach(btn => {
                 btn.addEventListener('mousemove', e => {
-                    window.magnetTarget = btn;
                     const rect = btn.getBoundingClientRect();
                     const cx = rect.left + rect.width / 2;
                     const cy = rect.top + rect.height / 2;
@@ -299,15 +208,10 @@
                     gsap.to(btn, { x: dx, y: dy, duration: 0.3, ease: 'power2.out' });
                 });
                 btn.addEventListener('mouseleave', () => {
-                    window.magnetTarget = null;
                     gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.4)' });
                 });
             });
-            document.querySelectorAll('.magnetic-btn').forEach(btn => {
-                btn.addEventListener('mouseenter', () => setCursorState('button', btn.getBoundingClientRect()));
-                btn.addEventListener('mouseleave', () => setCursorState('default'));
-            });
-            document.querySelectorAll('button:not(.magnetic-btn), [role="button"]').forEach(el => {
+            document.querySelectorAll('button, [role="button"]').forEach(el => {
                 el.addEventListener('mouseenter', () => setCursorState('button'));
                 el.addEventListener('mouseleave', () => setCursorState('default'));
             });
@@ -315,11 +219,6 @@
                 el.addEventListener('mouseenter', () => setCursorState('card'));
                 el.addEventListener('mouseleave', () => setCursorState('default'));
             });
-            const sliderContainer = document.getElementById('slider-webgl-container');
-            if (sliderContainer) {
-                sliderContainer.addEventListener('mouseenter', () => setCursorState('slider'));
-                sliderContainer.addEventListener('mouseleave', () => setCursorState('default'));
-            }
             document.querySelectorAll('a').forEach(el => {
                 el.addEventListener('mouseenter', () => setCursorState('link'));
                 el.addEventListener('mouseleave', () => setCursorState('default'));
@@ -376,41 +275,69 @@
             });
         }
         window.addEventListener('load', () => {
-            const preloader = document.getElementById('language-preloader');
-            const progress = document.getElementById('language-progress');
-            
-            if (preloader && progress) {
-                
-                progress.style.transition = 'width 2.2s ease-in-out';
-                progress.style.width = '100%';
-                
-                
+            const preloader = document.getElementById('preloader');
+            const title = document.getElementById('preloader-title');
+            const subtitle = document.getElementById('preloader-subtitle');
+            const key = document.getElementById('preloader-key');
+            const loadingBar = document.getElementById('loading-bar');
+            const loadingText = document.getElementById('loading-text');
+            const glow = document.getElementById('lock-glow');
+            setTimeout(() => {
+                if(title) title.style.opacity = '1';
+                if(subtitle) subtitle.style.opacity = '1';
+            }, 300);
+            let progress = 0;
+            const loadDuration = 4500; 
+            const interval = 45; 
+            const step = (100 / (loadDuration / interval));
+            setTimeout(() => {
+                if(key) {
+                    key.style.opacity = '1';
+                    const isMobilePreloader = window.innerWidth <= 768;
+                    const descendValue = isMobilePreloader ? '122px' : '130px'; 
+                    key.style.transform = `translateY(${descendValue})`; 
+                }
+            }, 800);
+            const loaderInterval = setInterval(() => {
+                progress += step;
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(loaderInterval);
+                    finishLoading();
+                }
+                if(loadingBar) loadingBar.style.width = `${progress}%`;
+                if(loadingText) loadingText.innerText = `${Math.floor(progress)}%`;
+            }, interval);
+            function finishLoading() {
+                if(key) {
+                    key.style.transition = 'transform 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+                    const isMobilePreloader = window.innerWidth <= 768;
+                    const descendValue = isMobilePreloader ? '122px' : '130px';
+                    key.style.transform = `translateY(${descendValue}) rotate(90deg)`; 
+                }
                 setTimeout(() => {
-                    preloader.style.opacity = '0';
+                    if(glow) glow.style.opacity = '1';
+                }, 400);
+                setTimeout(() => {
+                    if(preloader) {
+                        preloader.style.opacity = '0';
+                        preloader.style.pointerEvents = 'none';
+                    }
+                    gsap.from('.reveal-up', {
+                        y: 50, opacity: 0, duration: 1,
+                        stagger: 0.15, delay: 0.1,
+                        ease: 'power3.out'
+                    });
                     setTimeout(() => {
-                        preloader.classList.remove('pointer-events-auto');
-                        preloader.classList.add('pointer-events-none');
-                        preloader.style.display = 'none';
-                        
-                        gsap.from('.reveal-up', {
-                            y: 50, opacity: 0, duration: 1,
-                            stagger: 0.15, delay: 0.1,
-                            ease: 'power3.out'
-                        });
-                    }, 1000);
-                }, 2250);
-            } else {
-                gsap.from('.reveal-up', {
-                    y: 50, opacity: 0, duration: 1,
-                    stagger: 0.15, delay: 0.1,
-                    ease: 'power3.out'
-                });
+                        if(preloader) preloader.style.display = 'none';
+                    }, 1500); 
+                }, 1500); 
             }
         });
         const navContainer = document.getElementById('nav-interactive-container');
         const navCentralTrigger = document.getElementById('nav-central-trigger');
         const navLinkGroups = document.querySelectorAll('.nav-link-group');
-        const langSwitcher = document.getElementById('bottom-control-bar');
+        const langSwitcher = document.getElementById('lang-switcher-wrapper');
         let islandExpanded = false;
         let islandTimeout;
         let islandAnimating = false;
@@ -470,22 +397,18 @@
                 gsap.to('#logo-text-main', { letterSpacing: '0.25em', color: 'var(--gold)', duration: 0.6, ease: 'power3.out' });
             }, 450);
         }
-        if (navCentralTrigger) {
-            navCentralTrigger.addEventListener('mouseenter', () => {
-                if (!checkIsMobile()) expandDynamicIsland();
-            });
-            navCentralTrigger.addEventListener('click', (e) => {
-                if (checkIsMobile()) {
-                    e.stopPropagation();
-                    islandExpanded ? closeDynamicIsland() : expandDynamicIsland();
-                }
-            });
-        }
-        if (navContainer) {
-            navContainer.addEventListener('mouseleave', () => {
-                if (!checkIsMobile()) closeDynamicIsland();
-            });
-        }
+        navContainer.addEventListener('mouseenter', () => {
+            if (!checkIsMobile()) expandDynamicIsland();
+        });
+        navContainer.addEventListener('mouseleave', () => {
+            if (!checkIsMobile()) closeDynamicIsland();
+        });
+        navCentralTrigger.addEventListener('click', (e) => {
+            if (checkIsMobile()) {
+                e.stopPropagation();
+                islandExpanded ? closeDynamicIsland() : expandDynamicIsland();
+            }
+        });
         document.addEventListener('click', (e) => {
             if (checkIsMobile() && islandExpanded && !navContainer.contains(e.target)) {
                 closeDynamicIsland();
@@ -520,7 +443,7 @@
             if (scrollerWax) {
                 scrollerWax.style.height = `${Math.max(newWaxHeight, minH)}px`;
             }
-            if (footerSection && candleScroller) {
+            if (footerSection) {
                 const footerRect = footerSection.getBoundingClientRect();
                 if (footerRect.bottom <= window.innerHeight + 40) {
                     candleScroller.classList.add('candle-out');
@@ -612,25 +535,10 @@
         function updateWizardVisuals() {
             const requiredCount = activeOccasion === 'wedding' ? 5 : 4;
             const activeCount = wizardSelectedServices.filter(Boolean).length;
-            
-            const ringDashArray = 289;
-            const percentage = (activeCount / requiredCount) * ringDashArray;
-            const newOffset = ringDashArray - percentage;
+            const percentage = (activeCount / requiredCount) * 276.4;
+            const newOffset = 276.4 - percentage;
             const ring = document.getElementById('wizard-ring');
             if (ring) ring.style.strokeDashoffset = newOffset;
-            
-            const blueprintPaths = document.querySelectorAll('.blueprint-path');
-            if (blueprintPaths.length > 0) {
-                blueprintPaths.forEach((path, idx) => {
-                    if (wizardSelectedServices[idx]) {
-                        path.classList.add('active');
-                        path.style.strokeDashoffset = '0';
-                    } else {
-                        path.classList.remove('active');
-                        path.style.strokeDashoffset = '2000';
-                    }
-                });
-            }
             const textAr = document.getElementById('wiz-progress-text');
             const textEn = document.getElementById('wiz-progress-text-en');
             if (activeCount === requiredCount) {
@@ -646,7 +554,7 @@
         function handleWizardSubmit(e) {
             e.preventDefault();
             
-            
+            // Collect Form Data for Google Sheets
             const nameInput = document.getElementById('wizard-name');
             const phoneInput = document.getElementById('wizard-phone');
             const budgetVal = document.getElementById('budget-val');
@@ -678,35 +586,33 @@
                 .then(data => console.log('CRM Success:', data))
                 .catch(err => console.error('CRM Error:', err));
 
-            
+            // UI Animation
             const formPanel = document.getElementById('journey-form-panel');
             const successPanel = document.getElementById('journey-success-panel');
-            if (formPanel && successPanel) {
-                const formChildren = formPanel.children;
-                gsap.to(Array.from(formChildren), {
-                    y: -30, opacity: 0, duration: 0.5,
-                    stagger: 0.08, ease: 'power3.in',
-                    onComplete: () => {
-                        formPanel.style.display = 'none';
-                        successPanel.classList.add('is-active');
-                        gsap.fromTo(successPanel, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' });
-                        const circle = document.getElementById('checkmark-circle');
-                        const check = document.getElementById('checkmark-check');
-                        gsap.to(circle, {
-                            strokeDashoffset: 0, duration: 1.0,
-                            delay: 0.3, ease: 'power2.inOut'
-                        });
-                        gsap.to(check, {
-                            strokeDashoffset: 0, duration: 0.5,
-                            delay: 1.0, ease: 'power2.out'
-                        });
-                        gsap.to('#wizard-portal-key', {
-                            rotation: 720, scale: 1.4, filter: 'drop-shadow(0px 0px 20px rgba(142, 186, 160, 0.9)) brightness(1.3)',
-                            duration: 1.2, ease: 'power4.out'
-                        });
-                    }
-                });
-            }
+            const formChildren = formPanel.children;
+            gsap.to(Array.from(formChildren), {
+                y: -30, opacity: 0, duration: 0.5,
+                stagger: 0.08, ease: 'power3.in',
+                onComplete: () => {
+                    formPanel.style.display = 'none';
+                    successPanel.classList.add('is-active');
+                    gsap.fromTo(successPanel, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' });
+                    const circle = document.getElementById('checkmark-circle');
+                    const check = document.getElementById('checkmark-check');
+                    gsap.to(circle, {
+                        strokeDashoffset: 0, duration: 1.0,
+                        delay: 0.3, ease: 'power2.inOut'
+                    });
+                    gsap.to(check, {
+                        strokeDashoffset: 0, duration: 0.5,
+                        delay: 1.0, ease: 'power2.out'
+                    });
+                    gsap.to('#wizard-portal-key', {
+                        rotation: 720, scale: 1.4, filter: 'drop-shadow(0px 0px 20px rgba(142, 186, 160, 0.9)) brightness(1.3)',
+                        duration: 1.2, ease: 'power4.out'
+                    });
+                }
+            });
         }
         const footerClock = document.getElementById('footer-clock');
         function updateBaghdadTime() {
@@ -779,7 +685,15 @@
                 }
             });
         });
-        
+        function updateLiveClock() {
+            const clockEl = document.getElementById('footer-clock');
+            if (clockEl) {
+                const now = new Date();
+                clockEl.innerText = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
+            }
+        }
+        setInterval(updateLiveClock, 1000);
+        updateLiveClock();
         ScrollTrigger.create({
             trigger: '#services',
             start: 'top 80%',
@@ -793,47 +707,6 @@
                 );
             }
         });
-
-        
-        document.querySelectorAll('a').forEach(link => {
-            if (!link.hasAttribute('href')) return;
-            const href = link.getAttribute('href');
-            if (link.getAttribute('target') === '_blank' || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('#')) return;
-            
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const trans = document.getElementById('cinematic-transition');
-                if (trans) {
-                    gsap.to(trans, { opacity: 1, duration: 0.8, ease: 'power2.inOut', onComplete: () => {
-                        window.location.href = href;
-                    }});
-                } else {
-                    window.location.href = href;
-                }
-            });
-        });
-
-        
-        if (typeof SplitType !== 'undefined') {
-            const splitTitles = new SplitType('.section-title', { types: 'words' });
-            
-            document.querySelectorAll('.section-title').forEach(el => {
-                el.classList.remove('reveal-up');
-                gsap.set(el.querySelectorAll('.word'), { y: '100%', opacity: 0 });
-                
-                ScrollTrigger.create({
-                    trigger: el,
-                    start: 'top 90%',
-                    once: true,
-                    onEnter: () => {
-                        gsap.to(el.querySelectorAll('.word'), {
-                            y: '0%', opacity: 1, duration: 0.8,
-                            stagger: 0.05, ease: 'power3.out'
-                        });
-                    }
-                });
-            });
-        }
         ScrollTrigger.batch('.reveal-up', {
             start: 'top 92%',
             once: true,
@@ -846,163 +719,22 @@
                 });
             }
         });
-        if (document.querySelectorAll('.decorative-vase').length > 0) {
-            gsap.fromTo('.decorative-vase', 
-                { y: 150, opacity: 0, rotate: -10, scale: 0.8 },
-                {
-                    y: 0, opacity: 0.9, rotate: 0, scale: 1,
-                    duration: 1.8,
-                    ease: 'power3.out',
-                    stagger: 0.2,
-                    scrollTrigger: {
-                        trigger: '#cinematic-slider',
-                        start: 'top 80%',
-                    }
-                }
-            );
-            gsap.to('.decorative-vase', {
-                y: -15,
-                duration: 3,
-                ease: 'sine.inOut',
-                yoyo: true,
-                repeat: -1,
-                delay: 1.8
-            });
-        }
-
-        
-
-
         (function initCinematicSlider() {
-            const container = document.getElementById('slider-webgl-container');
-            if (!container || typeof THREE === 'undefined') return;
-
-            const scene = new THREE.Scene();
-            const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
-            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-            
-            renderer.setSize(container.clientWidth, container.clientHeight);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-            container.appendChild(renderer.domElement);
-
-            const vertexShader = `
-                varying vec2 vUv;
-                void main() {
-                    vUv = uv;
-                    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-                }
-            `;
-
-            const fragmentShaderProcedural = `
-                varying vec2 vUv;
-                uniform sampler2D texture1;
-                uniform sampler2D texture2;
-                uniform float dispFactor;
-                uniform vec2 uMouse;
-
-                void main() {
-                    vec2 uv = vUv;
-                    
-                    
-                    float noise = sin(uv.y * 25.0) * cos(uv.x * 25.0) * 0.03;
-                    vec2 distUv1 = uv + vec2(noise * dispFactor);
-                    vec2 distUv2 = uv - vec2(noise * (1.0 - dispFactor));
-
-                    vec4 tex1 = texture2D(texture1, distUv1);
-                    vec4 tex2 = texture2D(texture2, distUv2);
-                    
-                    
-                    float depth = dot(tex1.rgb, vec3(0.299, 0.587, 0.114)); 
-                    
-                    
-                    
-                    vec2 parallaxOffset = uMouse * (depth * 0.05); 
-                    
-                    
-                    vec4 finalTex1 = texture2D(texture1, distUv1 + parallaxOffset);
-                    vec4 finalTex2 = texture2D(texture2, distUv2 + parallaxOffset);
-
-                    gl_FragColor = mix(finalTex1, finalTex2, dispFactor);
-                }
-            `;
-
-            const loader = new THREE.TextureLoader();
-            const textures = [
-                loader.load('https://res.cloudinary.com/kmoscyfg/image/upload/v1783787555/love1_voueag.jpg'),
-                loader.load('https://res.cloudinary.com/kmoscyfg/image/upload/v1783787573/love3_wwy8xi.jpg'),
-                loader.load('https://res.cloudinary.com/kmoscyfg/image/upload/v1783787572/love2_plulmu.jpg')
-            ];
-            
-            
-            textures.forEach(tex => {
-                tex.minFilter = THREE.LinearFilter;
-                tex.magFilter = THREE.LinearFilter;
-            });
-
-            const material = new THREE.ShaderMaterial({
-                uniforms: {
-                    texture1: { value: textures[0] },
-                    texture2: { value: textures[0] }, 
-                    dispFactor: { value: 0.0 },
-                    uMouse: { value: new THREE.Vector2(0, 0) }
-                },
-                vertexShader: vertexShader,
-                fragmentShader: fragmentShaderProcedural,
-                transparent: true
-            });
-
-            const geometry = new THREE.PlaneGeometry(2, 2);
-            const mesh = new THREE.Mesh(geometry, material);
-            scene.add(mesh);
-
             let currentSlide = 0;
+            const slides = document.querySelectorAll('.cinematic-slide');
             const progressBars = document.querySelectorAll('.cinematic-progress');
             const slideDuration = 5000;
-            const totalSlides = 3;
-
-            let isVisible = false;
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => isVisible = entry.isIntersecting);
-            }, { threshold: 0 });
-            observer.observe(container);
-
-            let mouseTarget = new THREE.Vector2(0, 0);
-            container.addEventListener('mousemove', (e) => {
-                const rect = container.getBoundingClientRect();
-                const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-                const y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
-                mouseTarget.set(x, y);
-            });
-            container.addEventListener('mouseleave', () => {
-                mouseTarget.set(0, 0);
-            });
-
-            function render() {
-                requestAnimationFrame(render);
-                if(isVisible) {
-                    
-                    material.uniforms.uMouse.value.lerp(mouseTarget, 0.05);
-                    renderer.render(scene, camera);
-                }
-            }
-            render();
-
-            function goToSlide(nextIndex) {
-                material.uniforms.texture1.value = textures[currentSlide];
-                material.uniforms.texture2.value = textures[nextIndex];
-                material.uniforms.dispFactor.value = 0.0;
-
-                gsap.to(material.uniforms.dispFactor, {
-                    value: 1.0,
-                    duration: 1.5,
-                    ease: "power2.inOut",
-                    onComplete: () => {
-                        currentSlide = nextIndex;
+            if(slides.length === 0) return;
+            function goToSlide(index) {
+                slides.forEach((slide, i) => {
+                    if(i === index) {
+                        slide.style.opacity = '1';
+                    } else {
+                        slide.style.opacity = '0';
                     }
                 });
-
                 progressBars.forEach((pb, i) => {
-                    if (i === nextIndex) {
+                    if (i === index) {
                         const isRtl = document.documentElement.dir === 'rtl';
                         pb.style.transition = 'none';
                         pb.style.opacity = '1';
@@ -1021,38 +753,20 @@
                     }
                 });
             }
-
             function nextSlide() {
-                const next = (currentSlide + 1) % totalSlides;
-                goToSlide(next);
+                currentSlide = (currentSlide + 1) % slides.length;
+                goToSlide(currentSlide);
             }
-
             setTimeout(() => {
-                progressBars.forEach((pb, i) => {
-                    if(i === 0) {
-                        const isRtl = document.documentElement.dir === 'rtl';
-                        pb.style.clipPath = isRtl ? 'inset(0 0 0 100%)' : 'inset(0 100% 0 0)';
-                        void pb.offsetWidth;
-                        pb.style.transition = `clip-path ${slideDuration}ms linear`;
-                        pb.style.clipPath = 'inset(0 0 0 0)';
-                        pb.style.opacity = '1';
-                    }
-                });
+                goToSlide(0);
                 setInterval(nextSlide, slideDuration);
-            }, 1000);
-
-            window.addEventListener('resize', () => {
-                renderer.setSize(container.clientWidth, container.clientHeight);
-            });
+            }, 1000); 
         })();
         (function initCandle() {
             const maxH = getMaxWaxHeight();
             if (scrollerWax) scrollerWax.style.height = maxH + 'px';
         })();
 
-        
-        
-        
         const policiesData = {
             ar: {
                 terms: {
@@ -1129,12 +843,12 @@
                 modalBody.innerHTML = bodyHtml;
                 modalBody.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
                 
-                
+                // Show modal
                 const modal = document.getElementById('policy-modal');
                 modal.classList.remove('pointer-events-none');
                 gsap.to(modal, { opacity: 1, duration: 0.8, ease: "power2.out" });
                 
-                
+                // Refresh Lucide icons in case
                 if(window.lucide) lucide.createIcons();
             });
         }
@@ -1148,72 +862,5 @@
                 onComplete: () => {
                     modal.classList.add('pointer-events-none');
                 }
-            });
-        }
-
-        
-        
-
-        
-        
-
-        const footerSectionEl = document.getElementById('footer-section');
-        if (footerSectionEl) {
-            footerSectionEl.addEventListener('mousemove', (e) => {
-                const rect = footerSectionEl.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                footerSectionEl.style.setProperty('--mouse-x', `${x}px`);
-                footerSectionEl.style.setProperty('--mouse-y', `${y}px`);
-            });
-
-            
-            const bottomBar = document.getElementById('bottom-control-bar');
-            if (bottomBar) {
-                ScrollTrigger.create({
-                    trigger: footerSectionEl,
-                    start: "top bottom", 
-                    onEnter: () => gsap.to(bottomBar, { opacity: 0, pointerEvents: "none", duration: 0.4 }),
-                    onLeaveBack: () => gsap.to(bottomBar, { opacity: 1, pointerEvents: "auto", duration: 0.4 })
-                });
-            }
-        }
-        
-        
-        
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js').then(registration => {
-                    console.log('SW registered: ', registration);
-                }).catch(registrationError => {
-                    console.log('SW registration failed: ', registrationError);
-                });
-            });
-        }
-        
-        
-        
-        const parallaxFlowers = document.querySelectorAll('.parallax-flower');
-        if (parallaxFlowers.length > 0) {
-            const xSetters = [];
-            const ySetters = [];
-            const rotSetters = [];
-            
-            parallaxFlowers.forEach((flower) => {
-                xSetters.push(gsap.quickTo(flower, "x", {duration: 0.8, ease: "power2.out"}));
-                ySetters.push(gsap.quickTo(flower, "y", {duration: 0.8, ease: "power2.out"}));
-                rotSetters.push(gsap.quickTo(flower, "rotation", {duration: 0.8, ease: "power2.out"}));
-            });
-
-            window.addEventListener('mousemove', (e) => {
-                const mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-                const mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
-                
-                parallaxFlowers.forEach((flower, index) => {
-                    const depth = index === 0 ? 15 : -15;
-                    xSetters[index](mouseX * depth);
-                    ySetters[index](mouseY * depth);
-                    rotSetters[index](mouseX * (depth / 3));
-                });
             });
         }
