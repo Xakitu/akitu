@@ -879,10 +879,10 @@
 
             const scene = new THREE.Scene();
             const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
-            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false });
             
             renderer.setSize(container.clientWidth, container.clientHeight);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.25));
             container.appendChild(renderer.domElement);
 
             const vertexShader = `
@@ -928,9 +928,9 @@
 
             const loader = new THREE.TextureLoader();
             const textures = [
-                loader.load('https://res.cloudinary.com/kmoscyfg/image/upload/v1790093499/lo1_ef4h3n.jpg'),
-                loader.load('https://res.cloudinary.com/kmoscyfg/image/upload/v1790093516/lo3_ols2im.jpg'),
-                loader.load('https://res.cloudinary.com/kmoscyfg/image/upload/v1790093522/lo2_yg8aeb.jpg')
+                loader.load('https://res.cloudinary.com/kmoscyfg/image/upload/q_auto,f_auto,fl_progressive/v1790093499/lo1_ef4h3n.jpg'),
+                loader.load('https://res.cloudinary.com/kmoscyfg/image/upload/q_auto,f_auto,fl_progressive/v1790093516/lo3_ols2im.jpg'),
+                loader.load('https://res.cloudinary.com/kmoscyfg/image/upload/q_auto,f_auto,fl_progressive/v1790093522/lo2_yg8aeb.jpg')
             ];
             
             
