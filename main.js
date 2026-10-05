@@ -916,7 +916,7 @@
                     
                     
                     
-                    vec2 parallaxOffset = uMouse * (depth * 0.05); 
+                    vec2 parallaxOffset = vec2(0.0, 0.0); 
                     
                     
                     vec4 finalTex1 = texture2D(texture1, distUv1 + parallaxOffset);
